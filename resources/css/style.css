@@ -1,0 +1,30 @@
+/* Navbar Default Style */
+#navbar {
+    background-color: white; /* Default background */
+    color: black; /* Default text color */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.8); /* Transparan saat di-scroll */
+    backdrop-filter: blur(0px); /* Blur efek */
+    color: black; /* Ubah teks menjadi hitam */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+}
+
+#navbar.scrolled a {
+    color: black;
+}
+
+.nav-link {
+    color: inherit; /* Warna default dari navbar */
+}
+
+.nav-link:hover {
+    color: #1d4ed8; /* Warna biru saat hover */
+}
+
+/* Mobile Menu Styles */
+#mobile-menu a {
+    color: gray;
+}
