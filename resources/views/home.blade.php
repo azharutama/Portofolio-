@@ -77,12 +77,13 @@ Sebagai seorang pengembang, saya selalu berupaya untuk menguasai teknologi terba
         <ul class="text-gray-600 dark:text-gray-400 list-disc pl-6">
           <li>
             <span class="font-semibold text-gray-900 dark:text-white">Pasundan University (Unpas)</span>
-            <p class="text-sm">Bachelor of Informatics Engineering, 2020–2024</p>
+            <p class="text-sm">Informatics Engineering, 2022–until now</p>
           </li>
           <li>
-            <span class="font-semibold text-gray-900 dark:text-white">SMK XYZ</span>
-            <p class="text-sm">Vocational High School in Software Engineering, 2017–2020</p>
+            <span class="font-semibold text-gray-900 dark:text-white">SMA Negeri 1 Leuwiliang</span>
+            <p class="text-sm">MIPA, 2020-2022</p>
           </li>
+          
         </ul>
       </div>
     </div>
