@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 #navbar {
     background-color: white; /* Default background */
     color: black; /* Default text color */
@@ -7,7 +11,7 @@
 #navbar.scrolled {
     background-color: rgba(255, 255, 255, 0.1); /* Transparan saat di-scroll */
     backdrop-filter: blur(0px); /* Blur efek */
-    color: white; /* Ubah teks menjadi hitam */
+    color: white; /* Ubah teks menjadi putih */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
 }
 
@@ -26,4 +30,25 @@
 /* Mobile Menu Styles */
 #mobile-menu a {
     color: gray;
+}
+
+/* Media query untuk layar kecil (mobile) */
+@media (max-width: 768px) {
+    #navbar.scrolled {
+        background-color: rgba(
+            0,
+            0,
+            0,
+            0.5
+        ); /* Background transparan gelap saat di-scroll */
+        color: white;
+    }
+
+    #navbar.scrolled a {
+        color: ;
+    }
+
+    #mobile-menu a {
+        color: white; /* Warna teks putih untuk konsistensi */
+    }
 }
