@@ -1,11 +1,25 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portofolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   @vite(['resources/css/app.css','resources/js/app.js','resources/css/style.css'])
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 </head>
-<body>
 
+
+<body class="bg-gradient-to-br from-[#000000] via-[#070335] to-[#04041c] text-white font-roboto ">
+    <x-navbar></x-navbar>
+    <x-hero></x-hero>
+    
+    <main class="container mx-auto grid grid-cols-1 "> 
+      {{ $slot }}
+    </main>
+  
 </body>
 </html>

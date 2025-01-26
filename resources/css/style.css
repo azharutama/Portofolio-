@@ -3,16 +3,21 @@ html {
 }
 
 #navbar {
-    background-color: white; /* Default background */
-    color: black; /* Default text color */
+    background-color: transparent; /* Default background */
+    color: white; /* Default text color */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #navbar.scrolled {
-    background-color: rgba(255, 255, 255, 0.1); /* Transparan saat di-scroll */
-    backdrop-filter: blur(0px); /* Blur efek */
-    color: white; /* Ubah teks menjadi putih */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+    background: linear-gradient(
+        to bottom right,
+        #000000,
+        #070335,
+        #04041c
+    ); /* Gradient background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #navbar.scrolled a {
