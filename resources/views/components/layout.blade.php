@@ -15,7 +15,7 @@
 
 <body class="bg-gradient-to-br from-[#000000] via-[#070335] to-[#04041c] text-white font-roboto ">
     <x-navbar></x-navbar>
-    <x-hero></x-hero>
+    <x-main.hero></x-main.hero>
     
     <main class="container mx-auto grid grid-cols-1 "> 
       {{ $slot }}

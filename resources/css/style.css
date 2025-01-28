@@ -22,6 +22,12 @@ html {
 
 #navbar.scrolled a {
     color: white;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+#navbar.scrolled a:hover {
+    color: #1d4ed8; /* Warna biru saat hover */
+    background-color: white; /* Latar belakang putih saat hover */
+    border-radius: 5px; /* Membuat sudut membulat */
 }
 
 .nav-link {
@@ -30,6 +36,14 @@ html {
 
 .nav-link:hover {
     color: #1d4ed8; /* Warna biru saat hover */
+}
+
+.nav-link.scrolled:hover {
+    color: #1d4ed8;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 /* Mobile Menu Styles */
