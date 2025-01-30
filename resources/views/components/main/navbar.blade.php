@@ -2,7 +2,8 @@
     <div class="container mx-auto flex flex-wrap justify-between p-4">
       <!-- Logo -->
       <div class="md:flex space-x-8">
-        <h1 class="font-bold text-xl">PORTOFOLIO</h1>
+      
+        <h1 class="font-bold text-xl">Muhammad Azhar Utama</h1>
       </div>
       <!-- Navigation Links -->
       <div class="hidden md:flex space-x-8">
