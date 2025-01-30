@@ -13,13 +13,11 @@
 </head>
 
 
-<body class="bg-gradient-to-br from-[#000000] via-[#070335] to-[#04041c] text-white font-roboto ">
-    <x-main.navbar></x-main.navbar>
-    <x-main.hero></x-main.hero>
+<body class="bg-gradient-to-br from-[#000000] via-[#070335] to-[#04041c] text-white font-roboto no-repeat bg-cover bg-center">
     
-    <main class="container mx-auto grid grid-cols-1 "> 
+   
       {{ $slot }}
-    </main>
+    
   
 </body>
 </html>
