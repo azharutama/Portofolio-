@@ -58,7 +58,7 @@
       
         <li>
           <a
-            href="#"
+            href="/dashboard/skill"
             class="flex items-center p-2 text-base font-medium text-white rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white hover:text-black group"
           >
             <svg
@@ -80,7 +80,7 @@
         </li>
         <li>
           <a
-            href="#"
+            href="/dashboard/project"
             class="flex items-center p-2 text-base font-medium text-white rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white hover:text-black group"
           >
             <svg
@@ -99,7 +99,7 @@
         </li>
         <li>
           <a
-            href="#"
+            href="/dashboard/contact"
             class="flex items-center p-2 text-base font-medium text-white rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white hover:text-black group"
           >
             <svg
