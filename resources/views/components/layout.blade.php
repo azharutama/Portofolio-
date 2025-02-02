@@ -13,7 +13,7 @@
 </head>
 
 
-<body class="bg-gradient-to-br from-[#000000] via-[#070335] to-[#04041c] text-white font-roboto no-repeat bg-cover bg-center">
+<body class="bg-gradient-to-br from-[#000000] via-[#070335] to-[#04041c] text-white font-roboto ">
     
    
       {{ $slot }}

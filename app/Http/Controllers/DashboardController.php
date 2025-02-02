@@ -6,59 +6,53 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         return view('dashboard');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function showProjects()
     {
-        //
+        return view('dashboard.project');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function showSkills()
     {
-        //
+        return view('dashboard.skill');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function showContact()
     {
-        //
+        return view('dashboard.contact');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function createProjects()
     {
-        //
+        return view('dashboard.project.create');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function createSkills()
     {
-        //
+        return view('dashboard.skill.create');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function updateProjects()
     {
-        //
+        return view('dashboard.project.update');
+    }
+
+    public function Skilupdatels() // Kemungkinan typo, harusnya "updateSkills"
+    {
+        return view('dashboard.skill.update');
+    }
+
+    public function deleteProjects()
+    {
+        return view('dashboard.projects.delete');
+    }
+
+    public function deleteSkills()
+    {
+        return view('dashboard.skills.delete');
     }
 }
