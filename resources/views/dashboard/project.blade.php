@@ -1,4 +1,4 @@
-<x-layout>
+<x-dashboard.layout>
  
   <x-dashboard.navbar></x-dashboard.navbar>
 
@@ -45,4 +45,4 @@
       </tbody>
     </table>
   </main>
-</x-layout>
+</x-dashboard.layout>
