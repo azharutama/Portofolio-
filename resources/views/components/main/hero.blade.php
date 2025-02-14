@@ -3,9 +3,7 @@
         <!-- Section Left -->
      
         <div class="lg:col-span-5 flex flex-col items-center lg:items-start justify-center text-center lg:text-left lg:-ml-12">
-            <div> 
-                <img class="rounded-full w-96 h-96 mb-6 shadow-lg flip-on-load" src="{{ asset('storage/images/me.jpg') }}" alt="Example Image">
-            </div>
+           
         </div>
         
         
