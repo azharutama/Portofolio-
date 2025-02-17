@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 
 
@@ -17,5 +18,6 @@ Route::get('/dashboard/skill/update', [DashboardController::class, 'Skilupdatels
 Route::get('/dashboard/project/delete', [DashboardController::class, 'deleteProjects']);
 Route::get('/dashboard/skill/delete', [DashboardController::class, 'deleteSkills']);
 Route::get('/dashboard/contact', [DashboardController::class, 'showContact']);
+Route::get('/login', [LoginController::class, 'index']);
 
 Route::get('/', [MainController::class, 'index']);
