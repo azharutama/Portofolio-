@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -13,7 +14,21 @@ class DashboardController extends Controller
 
     public function showProjects()
     {
-        return view('dashboard.project');
+        $post = Project::all();
+
+        return view('dashboard.project', compact('post'));
+    }
+
+    public function storeProject(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+
+
+        ]);
+
+        project::create($request->all());
     }
 
     public function showSkills()
