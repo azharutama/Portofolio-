@@ -24,9 +24,17 @@ class DashboardController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
-
-
+            'url' => 'required',
+            'string',
+            'image' => 'required',
+            'string',
+            'github' => 'required',
+            'string',
+            'technologies' => 'required',
+            'string',
         ]);
+
+
 
         project::create($request->all());
     }
