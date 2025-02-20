@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\Skill;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -37,6 +38,24 @@ class DashboardController extends Controller
 
 
         project::create($request->all());
+    }
+
+
+    public function storeSkill(Request $request)
+    {
+
+        $request->validate([
+            'name' => 'required',
+            'string',
+            'competention' => 'required',
+            'string',
+            'description' => 'required',
+
+        ]);
+
+
+
+        Skill::create($request->all());
     }
 
     public function showSkills()
