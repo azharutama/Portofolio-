@@ -40,6 +40,12 @@ class DashboardController extends Controller
         project::create($request->all());
     }
 
+    public function deleteProject($id)
+    {
+        $post = Project::find($id);
+        $post->delete();
+        return redirect()->route('dashboard.project');
+    }
 
     public function storeSkill(Request $request)
     {
@@ -56,6 +62,13 @@ class DashboardController extends Controller
 
 
         Skill::create($request->all());
+    }
+
+    public function deleteSkill($id)
+    {
+        $post = Skill::find($id);
+        $post->delete();
+        return redirect()->route('dashboard.skill');
     }
 
     public function showSkills()
