@@ -40,6 +40,50 @@ class DashboardController extends Controller
         project::create($request->all());
     }
 
+    public function storeUpdateSkill(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required',
+            'string',
+            'competention' => 'required',
+            'string',
+            'description' => 'required',
+        ]);
+
+        $post = Skill::find($id);
+        $post->name = $request->name;
+        $post->competention = $request->competention;
+        $post->description = $request->description;
+        $post->save();
+        return redirect()->route('dashboard.skill');
+    }
+
+    public function storeUpdateProject(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'url' => 'required',
+            'string',
+            'image' => 'required',
+            'string',
+            'github' => 'required',
+            'string',
+            'technologies' => 'required',
+            'string',
+        ]);
+
+        $post = Project::find($id);
+        $post->name = $request->name;
+        $post->description = $request->description;
+        $post->url = $request->url;
+        $post->image = $request->image;
+        $post->github = $request->github;
+        $post->technologies = $request->technologies;
+        $post->save();
+        return redirect()->route('dashboard.project');
+    }
+
     public function deleteProject($id)
     {
         $post = Project::find($id);
