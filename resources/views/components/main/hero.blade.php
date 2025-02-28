@@ -1,9 +1,9 @@
-<section id="home" class="min-h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('{{ asset('storage/images/bg.png') }}');">
+<section id="home" class="min-h-screen flex items-center justify-center bg-cover bg-center">
     <div class="container mx-auto grid max-w-screen-xl px-4 lg:gap-8 xl:gap-0 lg:grid-cols-12 items-center">
         <!-- Section Left -->
      
-        <div class="lg:col-span-5 flex flex-col items-center lg:items-start justify-center text-center lg:text-left lg:-ml-12">
-           
+        <div class="lg:col-span-5 flex flex-col items-center lg:items-start justify-center text-center lg:text-left lg:-ml-12 me-36">
+           <img src="{{ asset('storage/images/hero2.png') }}" alt="">
         </div>
         
         
