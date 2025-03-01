@@ -20,4 +20,9 @@ Route::get('/dashboard/skill/delete', [DashboardController::class, 'deleteSkills
 Route::get('/dashboard/contact', [DashboardController::class, 'showContact']);
 Route::get('/login', [LoginController::class, 'index']);
 
+Route::post('/dashboard/project', [DashboardController::class, 'storeProjects']);
+Route::post('/dashboard/skill', [DashboardController::class, 'storeSkills']);
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
 Route::get('/', [MainController::class, 'index']);
