@@ -18,7 +18,7 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
-        if (auth()->attempt($request->only('email', 'password'))) {
+        if (\Illuminate\Support\Facades\Auth::attempt($request->only('email', 'password'))) {
             return redirect()->route('dashboard');
         }
 
