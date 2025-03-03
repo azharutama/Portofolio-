@@ -24,5 +24,9 @@ Route::post('/dashboard/project', [DashboardController::class, 'storeProjects'])
 Route::post('/dashboard/skill', [DashboardController::class, 'storeSkills']);
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout']);
+Route::post('/dashboard/contact', [DashboardController::class, 'storeContact']);
+Route::post('/dashboard/project/update', [DashboardController::class, 'storeUpdateProjects']);
+Route::post('/dashboard/skill/update', [DashboardController::class, 'storeUpdateSkills']);
+
 
 Route::get('/', [MainController::class, 'index']);
