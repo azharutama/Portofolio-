@@ -11,35 +11,38 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuBtn = document.getElementById("menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
     const navLinks = document.querySelectorAll(".nav-link");
+    const textElement = document.getElementById("text");
+    const cursorElement = document.querySelector(".cursor");
+    const heroSection = document.getElementById("home");
 
-    // Scroll Effect
-    if (navbar) {
-        window.addEventListener("scroll", function () {
-            if (window.scrollY > 50) {
-                navbar.classList.add("scrolled");
-                navLinks.forEach((link) => link.classList.add("scrolled"));
-            } else {
-                navbar.classList.remove("scrolled");
-                navLinks.forEach((link) => link.classList.remove("scrolled"));
-            }
-        });
-    }
+    const text = "Welcome to My Portfolio";
+    let index = 0;
+    let isTyping = false;
 
-    // Toggle Mobile Menu
+    // 👉 Optimized Scroll Effect
+    window.addEventListener("scroll", function () {
+        if (!navbar) return;
+
+        let scrollHeight = window.scrollY;
+        let triggerHeight = 1000; // Sesuaikan sesuai kebutuhan
+
+        if (scrollHeight > triggerHeight) {
+            navbar.classList.add("scrolled");
+            navLinks.forEach((link) => link.classList.add("scrolled"));
+        } else {
+            navbar.classList.remove("scrolled");
+            navLinks.forEach((link) => link.classList.remove("scrolled"));
+        }
+    });
+
+    // 👉 Toggle Mobile Menu
     if (menuBtn && mobileMenu) {
         menuBtn.addEventListener("click", function () {
             mobileMenu.classList.toggle("hidden");
         });
     }
-});
 
-document.addEventListener("DOMContentLoaded", function () {
-    const textElement = document.getElementById("text");
-    const cursorElement = document.querySelector(".cursor");
-    const text = "Welcome to My Portfolio";
-    let index = 0;
-    let isTyping = false;
-
+    // 👉 Efek Mengetik (Typing Effect)
     function typeEffect() {
         if (index < text.length) {
             textElement.textContent += text.charAt(index);
@@ -60,19 +63,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Cek jika section Hero terlihat di layar untuk memulai ulang efek ketik
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    resetTypingEffect();
-                } else {
-                    isTyping = false;
-                }
-            });
-        },
-        { threshold: 0.5 }
-    );
+    // 👉 Observer untuk restart efek ketik saat #home masuk viewport
+    if (heroSection) {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        resetTypingEffect();
+                    } else {
+                        isTyping = false;
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
 
-    observer.observe(document.getElementById("home")); // Pantau section #home
+        observer.observe(heroSection);
+    }
 });

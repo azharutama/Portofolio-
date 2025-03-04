@@ -12,7 +12,6 @@ html {
     background: linear-gradient(
         to bottom right,
         #000000,
-        #070335,
         #04041c
     ); /* Gradient background */
     backdrop-filter: blur(10px); /* Blur effect */
