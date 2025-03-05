@@ -29,4 +29,5 @@ Route::post('/dashboard/project/update', [DashboardController::class, 'storeUpda
 Route::post('/dashboard/skill/update', [DashboardController::class, 'storeUpdateSkills']);
 
 
+
 Route::get('/', [MainController::class, 'index']);

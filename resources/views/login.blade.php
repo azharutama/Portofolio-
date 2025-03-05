@@ -1,6 +1,6 @@
 <x-layout>
    
-  <x-main.navbar></x-main.navbar>
+  <x-navbar></x-navbar>
 
 
   <section class=" dark:bg-gray-900">

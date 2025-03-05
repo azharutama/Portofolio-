@@ -20,6 +20,7 @@ class DashboardController extends Controller
         return view('dashboard.project', compact('post'));
     }
 
+
     public function storeProject(Request $request)
     {
         $request->validate([
@@ -40,23 +41,6 @@ class DashboardController extends Controller
         project::create($request->all());
     }
 
-    public function storeUpdateSkill(Request $request, $id)
-    {
-        $request->validate([
-            'name' => 'required',
-            'string',
-            'competention' => 'required',
-            'string',
-            'description' => 'required',
-        ]);
-
-        $post = Skill::find($id);
-        $post->name = $request->name;
-        $post->competention = $request->competention;
-        $post->description = $request->description;
-        $post->save();
-        return redirect()->route('dashboard.skill');
-    }
 
     public function storeUpdateProject(Request $request, $id)
     {
@@ -107,6 +91,25 @@ class DashboardController extends Controller
 
         Skill::create($request->all());
     }
+
+    public function storeUpdateSkill(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required',
+            'string',
+            'competention' => 'required',
+            'string',
+            'description' => 'required',
+        ]);
+
+        $post = Skill::find($id);
+        $post->name = $request->name;
+        $post->competention = $request->competention;
+        $post->description = $request->description;
+        $post->save();
+        return redirect()->route('dashboard.skill');
+    }
+
 
     public function deleteSkill($id)
     {
