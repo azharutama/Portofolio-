@@ -87,17 +87,24 @@
   
   <!-- Cards Section -->
   <div class="mx-auto flex flex-wrap justify-center gap-12">
-      <!-- Card -->
+      @foreach ($projects as $project )
       <div class="max-w-sm border border-gray-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" data-aos="fade-up">
           <a href="#">
-              <img class="rounded-t-lg" src="{{ asset('storage/images/me.jpg') }}" alt="" />
+              <img class="rounded-t-lg" src="{{ $project->image }}" alt="" />
           </a>
           <div class="p-5">
               <a href="#">
-                  <h5 class="mb-2 text-2xl font-bold tracking-tight dark:text-white">Noteworthy technology acquisitions 2021</h5>
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight dark:text-white">{{ $project->name }}</h5>
               </a>
-              <p class="mb-3 font-normal dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-              <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gradient-to-br from-[#4B79A1] to-[#283E51] rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              <p class="mb-3 font-normal dark:text-gray-400">{{ $project->description }}</p>
+              <p class="mb-3 font-normal dark:text-gray-400">{{ $project->technologies }}</p>
+              <a href="{{ $project->url }}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gradient-to-br from-[#4B79A1] to-[#283E51] rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  VIEW
+                  <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                  </svg>
+              </a>
+              <a href="{{ $project->github}}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gradient-to-br from-[#4B79A1] to-[#283E51] rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                   VIEW
                   <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -105,32 +112,15 @@
               </a>
           </div>
       </div>
-      
-      <!-- Duplicate cards with animation -->
-      <div class="max-w-sm border border-gray-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" data-aos="fade-up">
-          <a href="#">
-              <img class="rounded-t-lg" src="{{ asset('storage/images/me.jpg') }}" alt="" />
-          </a>
-          <div class="p-5">
-              <a href="#">
-                  <h5 class="mb-2 text-2xl font-bold tracking-tight dark:text-white">Noteworthy technology acquisitions 2021</h5>
-              </a>
-              <p class="mb-3 font-normal dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-              <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gradient-to-br from-[#4B79A1] to-[#283E51] rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                  VIEW
-                  <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                  </svg>
-              </a>
-          </div>
-      </div>
+      @endforeach
+     
   </div>
 </section>
 <section id="contact" class="pt-32 dark:bg-gray-900">
   <div class="border rounded-lg shadow-lg py-8 lg:py-16 px-4 mx-auto max-w-screen-md" data-aos="fade-up">
       <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center dark:text-white">Contact Me!!</h2>
       <p class="mb-8 lg:mb-16 font-light text-center dark:text-gray-400 sm:text-xl">Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
-      <form action="#" class="space-y-8">
+      <form action="" method="POST" class="space-y-8">
           <div>
               <label for="email" class="block mb-2 text-sm font-medium dark:text-gray-300">Your email</label>
               <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required>
