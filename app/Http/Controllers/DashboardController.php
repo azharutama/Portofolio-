@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Project;
 use App\Models\Skill;
+use App\Models\Contact;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -125,7 +126,9 @@ class DashboardController extends Controller
 
     public function showContact()
     {
-        return view('dashboard.contact');
+
+        $contacts = Contact::all();
+        return view('dashboard.contact', compact('contacts'));
     }
 
     public function createProjects()
