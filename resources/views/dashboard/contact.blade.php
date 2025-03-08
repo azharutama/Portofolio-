@@ -25,7 +25,7 @@
         <tbody>
           @foreach ($contacs as $contact )
             
-          @endforeach
+         
           <tr>
             <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $contact->id }}</td>
             <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $contact->email }}</td>
@@ -36,6 +36,7 @@
               <button class="bg-red-500 text-white px-3 py-1 rounded">Delete</button>
             </td>
           </tr>
+          @endforeach
         </tbody>
       </table>
     </div>

@@ -15,37 +15,28 @@
       <table class="w-full border-collapse border border-gray-300 dark:border-gray-600">
         <thead>
           <tr class=" dark:bg-gray-700">
-            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">Header 1</th>
-            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">Header 2</th>
-            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">Header 3</th>
-            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">Header 4</th>
-            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">Header 5</th>
+            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">id</th>
+            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">name</th>
+            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">competention</th>
+            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">description</th>
             <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">Actions</th>
           </tr>
         </thead>
         <tbody>
+          @foreach ($skills as $skill )
+            
+          
           <tr>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Row 1 Col 1</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Row 1 Col 2</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Row 1 Col 3</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Row 1 Col 4</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Row 1 Col 5</td>
+            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $skill->id }}</td>
+            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $skill->name }}</td>
+            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $skill->competention }}</td>
+            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $skill->description }}</td>
             <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">
               <button class="bg-yellow-500 text-white px-3 py-1 rounded mr-2">Update</button>
               <button class="bg-red-500 text-white px-3 py-1 rounded">Delete</button>
             </td>
           </tr>
-          <tr>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Row 2 Col 1</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Row 2 Col 2</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Row 2 Col 3</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Row 2 Col 4</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Row 2 Col 5</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">
-              <button class="bg-yellow-500 text-white px-3 py-1 rounded mr-2">Update</button>
-              <button class="bg-red-500 text-white px-3 py-1 rounded">Delete</button>
-            </td>
-          </tr>
+          @endforeach
         </tbody>
       </table>
     </div>
