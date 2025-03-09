@@ -11,41 +11,50 @@
       <div class="mb-4">
         <button class="bg-blue-500 text-white px-4 py-2 rounded">ADD</button>
       </div>
-      
+      public function up(): void
+      {
+          Schema::create('projects', function (Blueprint $table) {
+              $table->id();
+              $table->string('name');
+              $table->string('description');
+              $table->string('url');
+              $table->string('image');
+              $table->string('github');
+              $table->string('technologies');
+              $table->timestamps();
+          });
+      }
       <table class="w-full border-collapse border border-gray-300 dark:border-gray-600">
         <thead>
           <tr class=" dark:bg-gray-700">
-            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">Header 1</th>
-            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">Header 2</th>
-            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">Header 3</th>
-            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">Header 4</th>
-            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">Header 5</th>
+            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">id</th>
+            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">name</th>
+            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">description</th>
+            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">url</th>
+            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">image</th>
+            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">github</th>
+            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">technologies</th>
             <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">Actions</th>
           </tr>
         </thead>
         <tbody>
+          @foreach ($projects as $project )
+            
+          
           <tr>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Row 1 Col 1</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Row 1 Col 2</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Row 1 Col 3</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Row 1 Col 4</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Row 1 Col 5</td>
+            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $project->id }}</td>
+            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $project->name }}</td>
+            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $project->description }}</td>
+            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $project->url }}</td>
+            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $project->image }}</td>
+            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $project->github }}</td>
+            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $project->technologies }}</td>
             <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">
               <button class="bg-yellow-500 text-white px-3 py-1 rounded mr-2">Update</button>
               <button class="bg-red-500 text-white px-3 py-1 rounded">Delete</button>
             </td>
           </tr>
-          <tr>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Row 2 Col 1</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Row 2 Col 2</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Row 2 Col 3</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Row 2 Col 4</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">Row 2 Col 5</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">
-              <button class="bg-yellow-500 text-white px-3 py-1 rounded mr-2">Update</button>
-              <button class="bg-red-500 text-white px-3 py-1 rounded">Delete</button>
-            </td>
-          </tr>
+          @endforeach
         </tbody>
       </table>
     </div>
