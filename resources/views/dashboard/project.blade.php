@@ -11,19 +11,6 @@
       <div class="mb-4">
         <button class="bg-blue-500 text-white px-4 py-2 rounded">ADD</button>
       </div>
-      public function up(): void
-      {
-          Schema::create('projects', function (Blueprint $table) {
-              $table->id();
-              $table->string('name');
-              $table->string('description');
-              $table->string('url');
-              $table->string('image');
-              $table->string('github');
-              $table->string('technologies');
-              $table->timestamps();
-          });
-      }
       <table class="w-full border-collapse border border-gray-300 dark:border-gray-600">
         <thead>
           <tr class=" dark:bg-gray-700">

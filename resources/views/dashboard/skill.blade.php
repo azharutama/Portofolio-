@@ -24,8 +24,6 @@
         </thead>
         <tbody>
           @foreach ($skills as $skill )
-            
-          
           <tr>
             <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $skill->id }}</td>
             <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $skill->name }}</td>
