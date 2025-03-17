@@ -6,11 +6,19 @@ use App\Models\Skill;
 use App\Models\Contact;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
     public function index()
     {
+
+        $auth = Auth::user();
+
+        if (!$auth) {
+            return redirect()->route('login');
+        }
+
         return view('dashboard');
     }
 
@@ -146,8 +154,9 @@ class DashboardController extends Controller
         return view('dashboard.project.update');
     }
 
-    public function Skilupdatels() // Kemungkinan typo, harusnya "updateSkills"
+    public function Skilupdatels()
     {
+
         return view('dashboard.skill.update');
     }
 
