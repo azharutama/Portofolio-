@@ -7,10 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function index()
-    {
-        return view('login');
-    }
+   
 
     public function login(Request $request)
     {
@@ -22,6 +19,8 @@ class LoginController extends Controller
         if (Auth::attempt($request->only('email', 'password'))) {
             return redirect()->route('dashboard');
         }
+
+        
 
         return back()->with('status', 'Invalid login details');
     }
