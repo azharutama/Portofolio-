@@ -12,119 +12,55 @@ class DashboardController extends Controller
 {
     public function index()
     {
-
-        $auth = Auth::user();
-
-        if (!$auth) {
+        if (!Auth::check()) {
             return redirect()->route('login');
         }
-
         return view('dashboard');
     }
 
     public function showProjects()
     {
-        $post = Project::all();
-
-        return view('dashboard.project', compact('post'));
+        $projects = Project::all();
+        return view('dashboard.project', compact('projects'));
     }
-
 
     public function storeProject(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'url' => 'required',
-            'string',
-            'image' => 'required',
-            'string',
-            'github' => 'required',
-            'string',
-            'technologies' => 'required',
-            'string',
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'url' => 'required|string',
+            'image' => 'required|string',
+            'github' => 'required|string',
+            'technologies' => 'required|string',
         ]);
 
-
-
-        project::create($request->all());
+        Project::create($request->all());
+        return redirect()->route('dashboard.project');
     }
 
-
-    public function storeUpdateProject(Request $request, $id)
+    public function updateProject(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'url' => 'required',
-            'string',
-            'image' => 'required',
-            'string',
-            'github' => 'required',
-            'string',
-            'technologies' => 'required',
-            'string',
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'url' => 'required|string',
+            'image' => 'required|string',
+            'github' => 'required|string',
+            'technologies' => 'required|string',
         ]);
 
-        $post = Project::find($id);
-        $post->name = $request->name;
-        $post->description = $request->description;
-        $post->url = $request->url;
-        $post->image = $request->image;
-        $post->github = $request->github;
-        $post->technologies = $request->technologies;
-        $post->save();
+        $project = Project::findOrFail($id);
+        $project->update($request->all());
+
         return redirect()->route('dashboard.project');
     }
 
     public function deleteProject($id)
     {
-        $post = Project::find($id);
-        $post->delete();
+        $project = Project::findOrFail($id);
+        $project->delete();
         return redirect()->route('dashboard.project');
-    }
-
-    public function storeSkill(Request $request)
-    {
-
-        $request->validate([
-            'name' => 'required',
-            'string',
-            'competention' => 'required',
-            'string',
-            'description' => 'required',
-
-        ]);
-
-
-
-        Skill::create($request->all());
-    }
-
-    public function storeUpdateSkill(Request $request, $id)
-    {
-        $request->validate([
-            'name' => 'required',
-            'string',
-            'competention' => 'required',
-            'string',
-            'description' => 'required',
-        ]);
-
-        $post = Skill::find($id);
-        $post->name = $request->name;
-        $post->competention = $request->competention;
-        $post->description = $request->description;
-        $post->save();
-        return redirect()->route('dashboard.skill');
-    }
-
-
-    public function deleteSkill($id)
-    {
-        $post = Skill::find($id);
-        $post->delete();
-        return redirect()->route('dashboard.skill');
     }
 
     public function showSkills()
@@ -132,41 +68,64 @@ class DashboardController extends Controller
         return view('dashboard.skill');
     }
 
+    public function storeSkill(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string',
+            'competention' => 'required|string',
+            'description' => 'required|string',
+        ]);
+
+        Skill::create($request->all());
+        return redirect()->route('dashboard.skill');
+    }
+
+    public function updateSkill(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required|string',
+            'competention' => 'required|string',
+            'description' => 'required|string',
+        ]);
+
+        $skill = Skill::findOrFail($id);
+        $skill->update($request->all());
+
+        return redirect()->route('dashboard.skill');
+    }
+
+    public function deleteSkill($id)
+    {
+        $skill = Skill::findOrFail($id);
+        $skill->delete();
+        return redirect()->route('dashboard.skill');
+    }
+
     public function showContact()
     {
-
         $contacts = Contact::all();
         return view('dashboard.contact', compact('contacts'));
     }
 
-    public function createProjects()
+    public function createProject()
     {
         return view('dashboard.project.create');
     }
 
-    public function createSkills()
+    public function createSkill()
     {
         return view('dashboard.skill.create');
     }
 
-    public function updateProjects()
+    public function editProject($id)
     {
-        return view('dashboard.project.update');
+        $project = Project::findOrFail($id);
+        return view('dashboard.project.update', compact('project'));
     }
 
-    public function Skilupdatels()
+    public function editSkill($id)
     {
-
-        return view('dashboard.skill.update');
-    }
-
-    public function deleteProjects()
-    {
-        return view('dashboard.projects.delete');
-    }
-
-    public function deleteSkills()
-    {
-        return view('dashboard.skills.delete');
+        $skill = Skill::findOrFail($id);
+        return view('dashboard.skill.update', compact('skill'));
     }
 }
