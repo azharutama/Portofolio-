@@ -11,28 +11,22 @@ class MainController extends Controller
 {
     public function index()
     {
-        $projects = Project::all(); // Ambil semua data project dari database
-        $skills = Skill::all(); // Ambil semua data skill dari database
-        $contacts = Contact::all(); // Ambil semua data contact dari database
+        $projects = Project::all();
+        $skills = Skill::all();
+        $contacts = Contact::all();
 
-        return view('main', compact('skills', 'projects', 'contacts')); // Kirim ke view index
-
-
-
+        return view('main', compact('skills', 'projects', 'contacts'));
     }
-
 
     public function storeContact(Request $request)
     {
         $request->validate([
-            'email' => 'required',
-            'string',
-            'subject' => 'required',
-            'string',
-            'message' => 'required',
-            'string',
+            'email' => 'required|string',
+            'subject' => 'required|string',
+            'message' => 'required|string',
         ]);
 
         Contact::create($request->all());
+        return redirect()->back()->with('success', 'Message sent successfully!');
     }
 }
