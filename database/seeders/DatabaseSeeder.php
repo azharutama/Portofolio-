@@ -18,6 +18,10 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'azharutama',
             'email' => 'azhar@gmail.com',
+            'password' => bcrypt('azhar'),
+            'remember_token' => null,
+            'email_verified_at' => now(),
+
         ]);
     }
 }
