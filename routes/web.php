@@ -11,21 +11,20 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
-Route::get('/dashboard/project', [DashboardController::class, 'showProjects']);
-Route::get('/dashboard/skill', [DashboardController::class, 'showSkills']);
+Route::get('/dashboard/project', [DashboardController::class, 'showProject'])->name('dashboard.project');
+Route::get('/dashboard/skill', [DashboardController::class, 'showSkill'])->name('dashboard.skill');
 Route::get('/dashboard/contact', [DashboardController::class, 'showContact']);
 
-Route::get('/dashboard/project/create', [DashboardController::class, 'createProjects']);
-Route::get('/dashboard/skill/create', [DashboardController::class, 'createSkills']);
-Route::post('/dashboard/project', [DashboardController::class, 'storeProjects']);
-Route::post('/dashboard/skill', [DashboardController::class, 'storeSkills']);
-Route::post('/dashboard/contact', [DashboardController::class, 'storeContact']);
+Route::get('/dashboard/project/create', [DashboardController::class, 'createProjects'])->name('projects.create');
+Route::get('/dashboard/skill/create', [DashboardController::class, 'createSkills'])->name('skills.create');
+Route::post('/dashboard/project/create', [DashboardController::class, 'storeProjects']);
+Route::post('/dashboard/skill/create', [DashboardController::class, 'storeSkills']);
 
-Route::get('/dashboard/project/update/{id}', [DashboardController::class, 'updateProjects']);
-Route::get('/dashboard/skill/update/{id}', [DashboardController::class, 'updateSkills']);
+Route::get('/dashboard/project/update/{id}', [DashboardController::class, 'updateProjects'])->name('projects.edit');
+Route::get('/dashboard/skill/update/{id}', [DashboardController::class, 'updateSkills'])->name('skills.edit');
 Route::post('/dashboard/project/update/{id}', [DashboardController::class, 'storeUpdateProjects']);
 Route::post('/dashboard/skill/update/{id}', [DashboardController::class, 'storeUpdateSkills']);
 
-Route::delete('/dashboard/project/{id}', [DashboardController::class, 'deleteProjects'])->name('projects.destroy');
-Route::delete('/dashboard/skill/{id}', [DashboardController::class, 'deleteSkills'])->name('skills.destroy');
-Route::delete('/dashboard/contact/{id}', [DashboardController::class, 'deleteContact'])->name('contact.destroy');
+Route::get('/dashboard/project/{id}', [DashboardController::class, 'deleteProjects'])->name('projects.destroy');
+Route::get('/dashboard/skill/{id}', [DashboardController::class, 'deleteSkills'])->name('skills.destroy');
+Route::get('/dashboard/contact/{id}', [DashboardController::class, 'deleteContact'])->name('contact.destroy');
