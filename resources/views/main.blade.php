@@ -90,7 +90,8 @@
       @foreach ($projects as $project )
       <div class="max-w-sm border border-gray-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" data-aos="fade-up">
           <a href="#">
-              <img class="rounded-t-lg" src="{{ $project->image }}" alt="" />
+            <img class="rounded-t-lg w-full h-48 object-cover" src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->name }}" />
+
           </a>
           <div class="p-5">
               <a href="#">

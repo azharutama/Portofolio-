@@ -32,18 +32,40 @@ class DashboardController extends Controller
 
     public function storeProjects(Request $request)
     {
-        $request->validate([
+        // Validate the incoming request data
+        $validated = $request->validate([
             'name' => 'required|string',
             'description' => 'required|string',
             'url' => 'required|string',
-            'image' => 'required|string',
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',
             'github' => 'required|string',
             'technologies' => 'required|string',
         ]);
 
-        Project::create($request->all());
-        return redirect()->route('dashboard.project');
+        // Simpan gambar ke storage (public disk)
+        if ($request->hasFile('image')) {
+            // Store the image and retrieve the file path
+            $imagePath = $request->file('image')->store('images', 'public');
+        } else {
+            // If image upload failed, return with an error message
+            return back()->withErrors(['image' => 'Image upload failed']);
+        }
+
+        // Store the project in the database
+        Project::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'url' => $request->url,
+            'image' => $imagePath,  // Store the image path in the database
+            'github' => $request->github,
+            'technologies' => $request->technologies,
+        ]);
+
+        // Redirect to the project dashboard with success message
+        return redirect()->route('dashboard.project')->with('success', 'Project added successfully!');
     }
+
+
 
     public function updateProjects($id)
     {
@@ -53,16 +75,36 @@ class DashboardController extends Controller
 
     public function storeUpdateProjects(Request $request, $id)
     {
-        $request->validate([
+        $project = Project::findOrFail($id);
+
+        $validated = $request->validate([
             'name' => 'required|string',
             'description' => 'required|string',
             'url' => 'required|string',
-            'image' => 'required|string',
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',
             'github' => 'required|string',
             'technologies' => 'required|string',
         ]);
 
-        $project = Project::findOrFail($id);
+        // Simpan gambar ke storage (public disk)
+        if ($request->hasFile('image')) {
+            // Store the image and retrieve the file path
+            $imagePath = $request->file('image')->store('images', 'public');
+        } else {
+            // If image upload failed, return with an error message
+            return back()->withErrors(['image' => 'Image upload failed']);
+        }
+
+        // Store the project in the database
+        Project::update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'url' => $request->url,
+            'image' => $imagePath,  // Store the image path in the database
+            'github' => $request->github,
+            'technologies' => $request->technologies,
+        ]);
+
         $project->update($request->all());
 
         return redirect()->route('dashboard.project');
