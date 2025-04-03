@@ -26,7 +26,11 @@ class MainController extends Controller
             'message' => 'required|string',
         ]);
 
-        Contact::create($request->all());
-        return redirect()->back()->with('success', 'Message sent successfully!');
+        try {
+            Contact::create($request->all());
+            return redirect()->back()->with('success', 'Message sent successfully!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to send message, please try again.');
+        }
     }
 }

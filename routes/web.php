@@ -6,6 +6,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 
 Route::get('/', [MainController::class, 'index']);
+
+Route::post('/', [MainController::class, 'storeContact'])->name('contact.store');
+
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
