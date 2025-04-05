@@ -9,4 +9,10 @@ class achievement extends Model
 {
     /** @use HasFactory<\Database\Factories\AchievementFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'description',
+        'image',
+    ];
 }

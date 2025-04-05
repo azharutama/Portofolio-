@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Skill;
 use App\Models\Contact;
 use App\Models\Project;
+use App\Models\Achievement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -192,5 +193,11 @@ class DashboardController extends Controller
         $contact = Contact::findOrFail($id);
         $contact->delete();
         return redirect()->route('dashboard.contact');
+    }
+
+    public function showAchievement($id)
+    {
+        $achievement = Achievement::findOrFail($id);
+        return view('dashboard.achievement', compact('achievement'));
     }
 }
