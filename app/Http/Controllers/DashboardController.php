@@ -200,4 +200,47 @@ class DashboardController extends Controller
         $achievement = Achievement::findOrFail($id);
         return view('dashboard.achievement', compact('achievement'));
     }
+
+    public function createAchievement()
+    {
+        return view('dashboard.achievement.create');
+    }
+
+    public function storeAchievement(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'date' => 'required|date',
+        ]);
+
+        Achievement::create($request->all());
+        return redirect()->route('dashboard.achievement');
+    }
+
+    public function updateAchievement($id)
+    {
+        $achievement = Achievement::findOrFail($id);
+        return view('dashboard.achievement.update', compact('achievement'));
+    }
+    public function storeUpdateAchievement(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'date' => 'required|date',
+        ]);
+
+        $achievement = Achievement::findOrFail($id);
+        $achievement->update($request->all());
+
+        return redirect()->route('dashboard.achievement');
+    }
+
+    public function deleteAchievement($id)
+    {
+        $achievement = Achievement::findOrFail($id);
+        $achievement->delete();
+        return redirect()->route('dashboard.achievement');
+    }
 }

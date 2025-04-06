@@ -21,15 +21,15 @@
           </tr>
         </thead>
         <tbody>
-          @foreach ($skills as $skill )
+          @foreach ($achievement as $achievement )
           <tr>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $skill->id }}</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $skill->name }}</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $skill->competention }}</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $skill->description }}</td>
+            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $achievement->id }}</td>
+            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $achievement->name }}</td>
+            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $achievement->competention }}</td>
+            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $achievement->description }}</td>
             <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">
-              <a href="{{ route('skills.edit', $skill->id) }}" class="bg-yellow-500 text-white px-3 py-1 rounded mr-2">Update</a>
-              <a href="{{ route('skills.destroy', $skill->id) }}" class="bg-red-500 text-white px-3 py-1 rounded" onclick="return confirm('Are you sure?');">Delete</a>
+              <a href="{{ route('achievement.edit', $achievement->id) }}" class="bg-yellow-500 text-white px-3 py-1 rounded mr-2">Update</a>
+              <a href="{{ route('achievement.destroy', $achievement->id) }}" class="bg-red-500 text-white px-3 py-1 rounded" onclick="return confirm('Are you sure?');">Delete</a>
             </td>
           </tr>
           @endforeach
