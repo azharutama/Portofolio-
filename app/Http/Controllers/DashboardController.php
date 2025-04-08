@@ -8,44 +8,38 @@ use App\Models\Project;
 use App\Models\Achievement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
-class DashboardController extends Controller
+class DashboardController extends BaseController
 {
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         return view('dashboard');
     }
 
     // Project Methods
     public function showProject()
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         $projects = Project::all();
         return view('dashboard.project', compact('projects'));
     }
 
     public function createProjects()
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         return view('dashboard.project.create');
     }
 
     public function storeProjects(Request $request)
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         $validated = $request->validate([
             'name' => 'required|string',
             'description' => 'required|string',
@@ -75,20 +69,12 @@ class DashboardController extends Controller
 
     public function updateProjects($id)
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         $project = Project::findOrFail($id);
         return view('dashboard.project.update', compact('project'));
     }
 
     public function storeUpdateProjects(Request $request, $id)
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         $project = Project::findOrFail($id);
 
         $validated = $request->validate([
@@ -106,7 +92,7 @@ class DashboardController extends Controller
             return back()->withErrors(['image' => 'Image upload failed']);
         }
 
-        $project->update([
+        Project::update([
             'name' => $request->name,
             'description' => $request->description,
             'url' => $request->url,
@@ -115,15 +101,13 @@ class DashboardController extends Controller
             'technologies' => $request->technologies,
         ]);
 
+        $project->update($request->all());
+
         return redirect()->route('dashboard.project');
     }
 
     public function deleteProjects($id)
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         $project = Project::findOrFail($id);
         $project->delete();
         return redirect()->route('dashboard.project');
@@ -132,29 +116,17 @@ class DashboardController extends Controller
     // Skill Methods
     public function showSkill()
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         $skills = Skill::all();
         return view('dashboard.skill', compact('skills'));
     }
 
     public function createSkills()
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         return view('dashboard.skill.create');
     }
 
     public function storeSkills(Request $request)
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         $request->validate([
             'name' => 'required|string',
             'competention' => 'required|string',
@@ -167,20 +139,12 @@ class DashboardController extends Controller
 
     public function updateSkills($id)
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         $skill = Skill::findOrFail($id);
         return view('dashboard.skill.update', compact('skill'));
     }
 
     public function storeUpdateSkills(Request $request, $id)
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         $request->validate([
             'name' => 'required|string',
             'competention' => 'required|string',
@@ -195,10 +159,6 @@ class DashboardController extends Controller
 
     public function deleteSkills($id)
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         $skill = Skill::findOrFail($id);
         $skill->delete();
         return redirect()->route('dashboard.skill');
@@ -207,20 +167,12 @@ class DashboardController extends Controller
     // Contact Methods
     public function showContact()
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         $contacts = Contact::all();
         return view('dashboard.contact', compact('contacts'));
     }
 
     public function storeContact(Request $request)
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         $request->validate([
             'name' => 'required|string',
             'email' => 'required|email',
@@ -233,41 +185,24 @@ class DashboardController extends Controller
 
     public function deleteContact($id)
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         $contact = Contact::findOrFail($id);
         $contact->delete();
         return redirect()->route('dashboard.contact');
     }
 
-    // Achievement Methods
     public function showAchievement($id)
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         $achievement = Achievement::findOrFail($id);
         return view('dashboard.achievement', compact('achievement'));
     }
 
     public function createAchievement()
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         return view('dashboard.achievement.create');
     }
 
     public function storeAchievement(Request $request)
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         $request->validate([
             'name' => 'required|string',
             'description' => 'required|string',
@@ -280,20 +215,12 @@ class DashboardController extends Controller
 
     public function updateAchievement($id)
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         $achievement = Achievement::findOrFail($id);
         return view('dashboard.achievement.update', compact('achievement'));
     }
 
     public function storeUpdateAchievement(Request $request, $id)
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         $request->validate([
             'name' => 'required|string',
             'description' => 'required|string',
@@ -308,10 +235,6 @@ class DashboardController extends Controller
 
     public function deleteAchievement($id)
     {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
-
         $achievement = Achievement::findOrFail($id);
         $achievement->delete();
         return redirect()->route('dashboard.achievement');
