@@ -6,7 +6,7 @@
       <section class=" dark:bg-gray-900 ">
         <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16 border rounded-lg border-dashed mt-36 ">
             <h2 class="mb-4 text-xl font-bold text-white dark:text-white">Add Skill</h2>
-            <form action="/dashboard/skill/create" method="post">
+            <form action="{{ route('skills.store.edit') }}" method="post">
                 @csrf
                 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                     <div class="sm:col-span-2">
@@ -28,11 +28,9 @@
                         <textarea  name="description" id="description" rows="8" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Your description here" >{{ old('description', $skill->description) }}</textarea>
                     </div>
                 </div>
-                <button type="submit" class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-black hover:text-white hover:border  bg-white text-black">
-
-
-                     update
-                </button>
+                <button type="submit" class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center  focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900  hover:border text-white bg-transparent border border-white rounded-lg shadow-lg hover:bg-gray-200 hover:text-black transition-all">
+                    Add
+               </button>
             </form>
         </div>
       </section>
