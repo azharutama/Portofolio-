@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
   Route::get('/dashboard/skill/{id}', [DashboardController::class, 'deleteSkills'])->name('skills.destroy');
 
   // Achievement
-  Route::get('/dashboard/achievement', [DashboardController::class, 'showAchievement']);
+  Route::get('/dashboard/achievement', [DashboardController::class, 'showAchievement'])->name('dashboard.achievement');
   Route::get('/dashboard/achievement/create', [DashboardController::class, 'createAchievement'])->name('achievement.create');
   Route::post('/dashboard/achievement/store', [DashboardController::class, 'storeAchievement'])->name('achievement.store.create');
   Route::get('/dashboard/achievement/update/{id}', [DashboardController::class, 'updateAchievement'])->name('achievement.edit');
@@ -43,6 +43,6 @@ Route::middleware('auth')->group(function () {
   Route::get('/dashboard/achievement/{id}', [DashboardController::class, 'deleteAchievement'])->name('achievement.destroy');
 
   // Contact
-  Route::get('/dashboard/contact', [DashboardController::class, 'showContact']);
-  Route::get('/dashboard/contact/{id}', [DashboardController::class, 'deleteContact'])->name('contact.destroy');
+  Route::get('/dashboard/contact', [DashboardController::class, 'showContact'])->name('dashboard.contacts');
+  Route::get('/dashboard/contact/{id}', [DashboardController::class, 'deleteContact'])->name('contacts.destroy');
 });

@@ -1,9 +1,17 @@
-<x-layout>
+<x-main.layout>
    
-    <x-navbar></x-navbar>
+    <x-main.navbar></x-main.navbar>
+
+
+ 
+      
+        <main class="p-4 md:ml-64 h-full pt-20">
+          
+          <div class="dark:border-gray-600 h-full w-full">
+         
 
     <section id="home" class="min-h-screen flex items-center justify-center text-center relative bg-cover bg-center"
-    style="background-image:url('{{ asset('storage/images/nice-snow.png') }}');">
+    style="background-image:url('{{ asset('storage/images/') }}');">
 
     <!-- Overlay untuk transparansi -->
     <div class="absolute inset-0 bg-black bg-opacity-50 dark:bg-opacity-70"></div>
@@ -193,9 +201,12 @@
   
 </div>
 </footer>
-      </main>
+     
 
  
+    </div>
+</main>
 
 
-</x-layout>
+
+</x-main.layout>

@@ -128,6 +128,7 @@ class DashboardController extends BaseController
     public function storeSkills(Request $request)
     {
         $request->validate([
+
             'name' => 'required|string',
             'competention' => 'required|string',
             'description' => 'required|string',
@@ -180,19 +181,19 @@ class DashboardController extends BaseController
         ]);
 
         Contact::create($request->all());
-        return redirect()->route('dashboard.contact');
+        return redirect()->route('dashboard.contacts');
     }
 
     public function deleteContact($id)
     {
         $contact = Contact::findOrFail($id);
         $contact->delete();
-        return redirect()->route('dashboard.contact');
+        return redirect()->route('dashboard.contacts');
     }
 
-    public function showAchievement($id)
+    public function showAchievement()
     {
-        $achievement = Achievement::findOrFail($id);
+        $achievement = Achievement::all();
         return view('dashboard.achievement', compact('achievement'));
     }
 
@@ -206,11 +207,21 @@ class DashboardController extends BaseController
         $request->validate([
             'name' => 'required|string',
             'description' => 'required|string',
-            'date' => 'required|date',
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',
         ]);
 
-        Achievement::create($request->all());
-        return redirect()->route('dashboard.achievement');
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('images', 'public');
+        } else {
+            return back()->withErrors(['image' => 'Image upload failed']);
+        }
+        Achievement::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'image' => $imagePath,
+        ]);
+
+        return redirect()->route('dashboard.achievement')->with('success', 'Achievement added successfully!');
     }
 
     public function updateAchievement($id)
@@ -224,8 +235,14 @@ class DashboardController extends BaseController
         $request->validate([
             'name' => 'required|string',
             'description' => 'required|string',
-            'date' => 'required|date',
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',
         ]);
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('images', 'public');
+        } else {
+            return back()->withErrors(['image' => 'Image upload failed']);
+        }
 
         $achievement = Achievement::findOrFail($id);
         $achievement->update($request->all());
@@ -237,6 +254,7 @@ class DashboardController extends BaseController
     {
         $achievement = Achievement::findOrFail($id);
         $achievement->delete();
+
         return redirect()->route('dashboard.achievement');
     }
 }

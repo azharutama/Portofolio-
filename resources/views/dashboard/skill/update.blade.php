@@ -6,7 +6,7 @@
       <section class=" dark:bg-gray-900 ">
         <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16 border rounded-lg border-dashed mt-36 ">
             <h2 class="mb-4 text-xl font-bold text-white dark:text-white">Add Skill</h2>
-            <form action="{{ route('skills.store.edit') }}" method="post">
+            <form action="{{ route('skills.store.edit', ['id' => $skill->id]) }}" method="post">
                 @csrf
                 <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                     <div class="sm:col-span-2">

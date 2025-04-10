@@ -15,7 +15,7 @@ class MainController extends Controller
         $skills = Skill::all();
         $contacts = Contact::all();
 
-        return view('main', compact('skills', 'projects', 'contacts'));
+        return view('Main.index', compact('skills', 'projects', 'contacts'));
     }
 
     public function storeContact(Request $request)

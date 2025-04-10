@@ -6,7 +6,7 @@
       <section class=" dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
             <h2 class="mb-4 text-xl font-bold text-white dark:text-white">Create Project</h2>
-            <form action="{{ route('projects.store.edit') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('projects.store.edit' ,  ['id' => $project->id]) }}" method="post" enctype="multipart/form-data">
                 @csrf
 
                 @if ($errors->any())

@@ -23,7 +23,6 @@
             <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $contact->subject }}</td>
             <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $contact->message }}</td>
             <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">
-              <a href="{{ route('contacts.edit', $contact->id) }}" class="bg-yellow-500 text-white px-3 py-1 rounded mr-2">Update</a>
               <a href="{{ route('contacts.destroy', $contact->id) }}" class="bg-red-500 text-white px-3 py-1 rounded" onclick="return confirm('Are you sure?');">Delete</a>
             </td>
           </tr>

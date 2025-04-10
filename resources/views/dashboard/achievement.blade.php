@@ -8,7 +8,7 @@
       
       <!-- Tombol ADD -->
       <div class="mb-4">
-        <a href="{{ route('skills.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded">ADD</a>
+        <a href="{{ route('achievement.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded">ADD</a>
       </div>
       
       <table class="w-full border-collapse border border-gray-300 dark:border-gray-600">
@@ -16,6 +16,7 @@
           <tr class="dark:bg-gray-700">
             <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">id</th>
             <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">name</th>
+            <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">image</th>
             <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">description</th>
             <th class="border border-gray-300 dark:border-gray-600 px-4 py-2">Actions</th>
           </tr>
@@ -25,7 +26,7 @@
           <tr>
             <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $achievement->id }}</td>
             <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $achievement->name }}</td>
-            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $achievement->competention }}</td>
+            <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $achievement->image }}</td>
             <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">{{ $achievement->description }}</td>
             <td class="border border-gray-300 dark:border-gray-600 px-4 py-2">
               <a href="{{ route('achievement.edit', $achievement->id) }}" class="bg-yellow-500 text-white px-3 py-1 rounded mr-2">Update</a>
