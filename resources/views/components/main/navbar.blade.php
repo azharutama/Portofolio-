@@ -1,4 +1,4 @@
-<nav class="bg-[#001523] border-b border-gray-200 px-4 py-2.5 dark:bg-gray-800 dark:border-gray-700 fixed left-0 right-0 top-0 z-50">
+<nav class="bg-[#001523] px-4 py-2.5 dark:bg-gray-800 dark:border-gray-700 fixed left-0 right-0 top-0 z-50">
   <div class="flex flex-wrap justify-between items-center">
     <div class="flex justify-start items-center">
       <button
@@ -46,9 +46,8 @@
 </nav>
 
 <!-- Sidebar -->
-
 <aside
-  class="fixed top-0 left-0 z-40 w-64 h-screen pt-14 transition-transform -translate-x-full bg-gradient-to-br from-[#000000] via-[#070335] to-[#04041c] border-r  md:translate-x-0  dark:border-gray-700"
+  class="fixed top-0 pt-14 left-0 z-40 w-64 h-screen  transition-transform -translate-x-full bg-gradient-to-br from-[#000000] via-[#070335] to-[#04041c] border-r  md:translate-x-0  dark:border-gray-700"
   aria-label="Sidenav"
   id="drawer-navigation">
   <div class="overflow-y-auto py-5 px-3 h-full bg-[#001523]">
@@ -58,7 +57,7 @@
     
       <li>
         <a
-          href="/dashboard/skill"
+          href="{{ route('main.skill') }}"
           class="flex items-center p-2 text-base font-medium text-white rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white hover:text-black group"
         >
           <svg
@@ -80,7 +79,7 @@
       </li>
       <li>
         <a
-          href="/dashboard/project"
+          href="{{ route('main.project') }}"
           class="flex items-center p-2 text-base font-medium text-white rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white hover:text-black group"
         >
           <svg
@@ -99,7 +98,7 @@
       </li>
       <li>
         <a
-          href="{{ route('dashboard.contacts') }}"
+          href="{{ route('main.contact') }}"
           class="flex items-center p-2 text-base font-medium text-white rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white hover:text-black group"
         >
           <svg
@@ -120,7 +119,7 @@
       </li>
       <li>
         <a
-          href="{{ route('dashboard.achievement') }}"
+          href="{{ route('main.achievement') }}"
           class="flex items-center p-2 text-base font-medium text-white rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white hover:text-black group"
         >
           <svg
