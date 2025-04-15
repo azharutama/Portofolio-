@@ -14,7 +14,7 @@
                 class="text-4xl font-extrabold tracking-tight leading-tight md:text-5xl xl:text-6xl dark:text-white">
                 <span id="text"></span><span class="cursor">|</span>
             </h1>
-            <p class="text-lg font-light lg:text-xl dark:text-gray-400 mt-6">
+            <p class="text-lg font-light lg:text-l dark:text-gray-400 mt-6">
                 I'm <span class="font-semibold">Muhammad Azhar Utama</span>, a <span class="font-semibold">Backend Developer</span> with extensive experience in PHP, the Laravel framework, and MySQL database management.
             </p>
             <p class="text-lg font-light lg:text-xl dark:text-gray-400 mt-4">
@@ -26,7 +26,8 @@
             </a>
               </div>
               <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                  <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="mockup">
+                 <img src="{{ asset('storage/images/man-vr-headset.png') }}" alt="mockup">
+
               </div>                
           </div>
       </section>
