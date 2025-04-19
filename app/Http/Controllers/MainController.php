@@ -13,7 +13,12 @@ class MainController extends Controller
     {
 
 
-        return view('Main.index');
+        $projects = Project::all();
+        $skills = Skill::all();
+        $achievements = Project::all();
+        $contact = Contact::all();
+
+        return view('Main.index', compact('projects', 'skills', 'achievements', 'contact'));
     }
 
     public function about()

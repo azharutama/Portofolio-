@@ -9,11 +9,7 @@ html {
 }
 
 #navbar.scrolled {
-    background: linear-gradient(
-        to bottom right,
-        #000000,
-        #04041c
-    ); /* Gradient background */
+    background: #00111c;
     backdrop-filter: blur(10px); /* Blur effect */
     color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!navbar) return;
 
         let scrollHeight = window.scrollY;
-        let triggerHeight = 1000; // Sesuaikan sesuai kebutuhan
+        let triggerHeight = 10; // Sesuaikan sesuai kebutuhan
 
         if (scrollHeight > triggerHeight) {
             navbar.classList.add("scrolled");
