@@ -22,7 +22,7 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 // Protected routes (only accessible when logged in)
 Route::middleware('auth')->group(function () {
   Route::post('/logout', [LoginController::class, 'logout']);
-  Route::get('/dashboard', [DashboardController::class, 'index']);
+  Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
   // Project
   Route::get('/dashboard/project', [DashboardController::class, 'showProject'])->name('dashboard.project');

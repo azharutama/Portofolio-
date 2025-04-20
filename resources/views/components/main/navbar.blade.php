@@ -4,7 +4,7 @@
       <div class="container mx-auto flex flex-wrap items-center justify-between p-4 ">
         <!-- Logo -->
         <div class="hidden md:flex space-x-8">
-          <h1 class="font-bold text-xl">PORTOFOLIO</h1>
+          <h1 class="font-bold text-xl">Muhammad Azhar Utama</h1>
         </div>
         <!-- Navigation Links -->
         <div class="hidden md:flex space-x-8">
@@ -12,6 +12,7 @@
           <a href="#about" class="nav-link block py-2 px-3 rounded hover:bg-gray-100 transition font-bold">About</a>
           <a href="#skill" class="nav-link block py-2 px-3 rounded hover:bg-gray-100 transition font-bold">Skill</a>
           <a href="#project" class="nav-link block py-2 px-3 rounded hover:bg-gray-100 transition font-bold">Project</a>
+          <a href="#achievement" class="nav-link block py-2 px-3 rounded hover:bg-gray-100 transition font-bold">Achievement</a>
         </div>
         
         <!-- Mobile Menu Button -->
@@ -26,6 +27,7 @@
           <a href="#about" class="block py-2 px-4 text-gray-900 hover:bg-gray-100">About</a>
           <a href="#skill" class="block py-2 px-4 text-gray-900 hover:bg-gray-100">Skill</a>
           <a href="#project" class="block py-2 px-4 text-gray-900 hover:bg-gray-100">Project</a>
+          <a href="#project" class="block py-2 px-4 text-gray-900 hover:bg-gray-100">Achievement</a>
         </div>
       </div>
     </nav>
