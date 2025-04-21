@@ -9,13 +9,6 @@ use App\Http\Controllers\DashboardController;
 Route::get('/', [MainController::class, 'index']);
 Route::post('/', [MainController::class, 'storeContact'])->name('contact.store');
 
-route::get('/about', [MainController::class, 'about'])->name('main.about');
-Route::get('/projects', [MainController::class, 'projects'])->name('main.project');
-Route::get('/skills', [MainController::class, 'skills'])->name('main.skill');
-Route::get('/achievements', [MainController::class, 'achievements'])->name('main.achievement');
-Route::get('/contact', [MainController::class, 'contact'])->name('main.contact');
-
-
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 
