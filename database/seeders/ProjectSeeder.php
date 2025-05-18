@@ -18,7 +18,7 @@ class ProjectSeeder extends Seeder
                 'name' => 'Stryde e-commerce',
                 'description' => 'Website e-commerce yang dibangun menggunakan Laravel dan React. Memiliki fitur keranjang belanja, manajemen produk, dan sistem pembayaran.',
                 'url' => 'https://github.com/rayhanrezki/Stryde',
-                'image' => 'public/storage/images/1.png',
+                'image' => 'images/1.png',
                 'github' => 'https://github.com/rayhanrezki/Stryde',
                 'technologies' => 'Laravel, React, MySQL,inertiajs',
                 'created_at' => now(),

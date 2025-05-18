@@ -6,34 +6,39 @@
 
 
     <main class="container mx-auto grid grid-cols-1 "> 
+<section id="home" class="dark:bg-gray-900 mt-10 min-h-screen flex items-center" data-aos="fade-up">
+    <div class="grid grid-cols-1 lg:grid-cols-12 py-8 px-4 sm:px-6 lg:px-8 mx-auto gap-8">
+        
+        <!-- Kanan (mobile): Gambar -->
+        <div class="lg:hidden flex justify-center items-center">
+            <img src="{{ asset('storage/images/man-vr-headset.png') }}" alt="mockup" class="w-2/3 sm:w-1/2">
+        </div>
 
-        <section id="home" class="dark:bg-gray-900 mt-10 min-h-screen flex items-center" data-aos="fade-up">
-            <div class="grid  py-8 mx-auto lg:grid-cols-12 gap-4">
-        
-                <!-- Kiri: Teks -->
-                <div class="mr-auto place-self-start lg:col-span-8 text-left pt-5">
-                    <h1 id="typing-title" class="text-4xl font-extrabold tracking-tight leading-tight md:text-5xl xl:text-6xl dark:text-white">
-                        <span id="text"></span><span class="cursor">|</span>
-                    </h1>
-                    <p class="text-lg font-light lg:text-l dark:text-gray-400 mt-6">
-                        I'm <span class="font-semibold">Muhammad Azhar Utama</span>, a 
-                        <span class="font-semibold">Backend Developer</span> with extensive experience in PHP, the Laravel framework, and MySQL database management.
-                    </p>
-                    <p class="text-lg font-light lg:text-xl dark:text-gray-400 mt-4">
-                        With a strong background in programming and web application development, I specialize in crafting efficient and scalable backend solutions for diverse projects.
-                    </p>
-                    <a href="#contact" class="mt-8 inline-block px-6 py-3 text-white bg-transparent border border-white rounded-lg shadow-lg hover:bg-gray-200 hover:text-black transition-all">
-                        Contact Me
-                    </a>
-                </div>
-        
-                <!-- Kanan: Gambar -->
-                <div class="hidden lg:flex lg:col-span-4 justify-end items-center text-right ps-10">
-                    <img src="{{ asset('storage/images/man-vr-headset.png') }}" alt="mockup">
-                </div>
-        
-            </div>
-        </section>
+        <!-- Kiri: Teks -->
+        <div class="lg:col-span-8 flex flex-col justify-center text-left">
+            <h1 id="typing-title" class="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold tracking-tight leading-tight dark:text-white">
+                <span id="text"></span><span class="cursor">|</span>
+            </h1>
+            <p class="text-base sm:text-lg font-light dark:text-gray-400 mt-6">
+                I'm <span class="font-semibold">Muhammad Azhar Utama</span>, a 
+                <span class="font-semibold">Backend Developer</span> with extensive experience in PHP, the Laravel framework, and MySQL database management.
+            </p>
+            <p class="text-base sm:text-lg font-light dark:text-gray-400 mt-4">
+                With a strong background in programming and web application development, I specialize in crafting efficient and scalable backend solutions for diverse projects.
+            </p>
+            <a href="#contact" class="mt-8 inline-block px-6 py-3 text-white bg-transparent border border-white rounded-lg shadow-lg hover:bg-gray-200 hover:text-black transition-all w-max">
+                Contact Me
+            </a>
+        </div>
+
+        <!-- Kanan (desktop): Gambar -->
+        <div class="hidden lg:flex lg:col-span-4 justify-center items-center">
+            <img src="{{ asset('storage/images/man-vr-headset.png') }}" alt="mockup" class="w-full max-w-xs xl:max-w-sm">
+        </div>
+
+    </div>
+</section>
+
         
 
       <section id="about" class=" dark:bg-gray-800 min-h-screen flex items-center" data-aos="fade-up">
