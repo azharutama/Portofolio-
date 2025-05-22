@@ -16,6 +16,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 class DashboardController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -55,14 +56,8 @@ class DashboardController extends BaseController
             return back()->withErrors(['image' => 'Image upload failed']);
         }
 
-        Project::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'url' => $request->url,
-            'image' => $imagePath,
-            'github' => $request->github,
-            'technologies' => $request->technologies,
-        ]);
+        $validated['image'] = $imagePath;
+        Project::create($validated);
 
         return redirect()->route('dashboard.project')->with('success', 'Project added successfully!');
     }
@@ -92,16 +87,8 @@ class DashboardController extends BaseController
             return back()->withErrors(['image' => 'Image upload failed']);
         }
 
-        Project::update([
-            'name' => $request->name,
-            'description' => $request->description,
-            'url' => $request->url,
-            'image' => $imagePath,
-            'github' => $request->github,
-            'technologies' => $request->technologies,
-        ]);
-
-        $project->update($request->all());
+        $validated['image'] = $imagePath;
+        $project->update($validated);
 
         return redirect()->route('dashboard.project');
     }
@@ -127,14 +114,13 @@ class DashboardController extends BaseController
 
     public function storeSkills(Request $request)
     {
-        $request->validate([
-
+        $validated = $request->validate([
             'name' => 'required|string',
             'competention' => 'required|string',
             'description' => 'required|string',
         ]);
 
-        Skill::create($request->all());
+        Skill::create($validated);
         return redirect()->route('dashboard.skill');
     }
 
@@ -146,14 +132,14 @@ class DashboardController extends BaseController
 
     public function storeUpdateSkills(Request $request, $id)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string',
             'competention' => 'required|string',
             'description' => 'required|string',
         ]);
 
         $skill = Skill::findOrFail($id);
-        $skill->update($request->all());
+        $skill->update($validated);
 
         return redirect()->route('dashboard.skill');
     }
@@ -174,13 +160,13 @@ class DashboardController extends BaseController
 
     public function storeContact(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string',
             'email' => 'required|email',
             'message' => 'required|string',
         ]);
 
-        Contact::create($request->all());
+        Contact::create($validated);
         return redirect()->route('dashboard.contacts');
     }
 
@@ -204,7 +190,7 @@ class DashboardController extends BaseController
 
     public function storeAchievement(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string',
             'description' => 'required|string',
             'image' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',
@@ -215,11 +201,9 @@ class DashboardController extends BaseController
         } else {
             return back()->withErrors(['image' => 'Image upload failed']);
         }
-        Achievement::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'image' => $imagePath,
-        ]);
+
+        $validated['image'] = $imagePath;
+        Achievement::create($validated);
 
         return redirect()->route('dashboard.achievement')->with('success', 'Achievement added successfully!');
     }
@@ -232,7 +216,7 @@ class DashboardController extends BaseController
 
     public function storeUpdateAchievement(Request $request, $id)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string',
             'description' => 'required|string',
             'image' => 'required|image|mimes:jpg,png,jpeg,gif|max:2048',
@@ -244,8 +228,9 @@ class DashboardController extends BaseController
             return back()->withErrors(['image' => 'Image upload failed']);
         }
 
+        $validated['image'] = $imagePath;
         $achievement = Achievement::findOrFail($id);
-        $achievement->update($request->all());
+        $achievement->update($validated);
 
         return redirect()->route('dashboard.achievement');
     }
