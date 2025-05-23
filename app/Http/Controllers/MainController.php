@@ -14,10 +14,10 @@ class MainController extends Controller
     {
 
 
-        $projects = Project::all();
-        $skills = Skill::all();
-        $achievements = Achievement::all();
-        $contact = Contact::all();
+        $projects = Project::select('id', 'name', 'description', 'url', 'image', 'github', 'technologies')->get();
+        $skills = Skill::select('id', 'name', 'competention', 'description')->get();
+        $achievements = Achievement::select('id', 'name', 'description', 'image')->get();
+        $contacts = Contact::select('id', 'name', 'email', 'message')->get(); // Pakai jamak untuk konsistensi
 
         return view('Main.index', compact('projects', 'skills', 'achievements', 'contact'));
     }
