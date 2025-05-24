@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Skill;
+use Illuminate\Support\Facades\DB;
 
 class SkillSeeder extends Seeder
 {
@@ -12,7 +13,7 @@ class SkillSeeder extends Seeder
      */
     public function run(): void
     {
-        $skills = [
+        DB::table('skills')->insert([
             ['name' => 'PHP', 'competention' => 'Advance', 'description' => 'Advanced PHP programming skills'],
             ['name' => 'Laravel', 'competention' => 'Advance', 'description' => 'Advanced Laravel development'],
             ['name' => 'MySQL', 'competention' => 'Advance', 'description' => 'Advanced MySQL database management'],
@@ -26,10 +27,6 @@ class SkillSeeder extends Seeder
             ['name' => 'Google Cloud', 'competention' => 'Advance', 'description' => 'Advanced usage of Google Cloud Platform'],
             ['name' => 'Java', 'competention' => 'Intermediate', 'description' => 'Intermediate Java programming skills'],
             ['name' => 'Kotlin', 'competention' => 'Beginner', 'description' => 'Basic understanding of Kotlin'],
-        ];
-
-        foreach ($skills as $skill) {
-            Skill::create($skill);
-        }
+        ]);
     }
 }
