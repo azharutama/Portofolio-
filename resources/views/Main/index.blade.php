@@ -12,7 +12,7 @@
         <!-- Kanan (mobile): Gambar -->
         <div class="lg:hidden flex justify-center items-center">
          
-            <img  src="{{ asset('1.png') }}" alt="mockup" class="w-2/3 sm:w-1/2 animate-bounce duration-300">
+            <img  src="{{ asset('hero/hero.png') }}" alt="mockup" class="w-2/3 sm:w-1/2 animate-float">
         </div>
 
         <!-- Kiri: Teks -->
@@ -34,7 +34,7 @@
 
         <!-- Kanan (desktop): Gambar -->
         <div class="hidden lg:flex lg:col-span-4 justify-center items-center">
-            <img src="{{ asset('1.png') }}" alt="mockup" class="w-full max-w-xs xl:max-w-sm animate-float">
+            <img src="{{ asset('hero/hero.png') }}" alt="mockup" class="w-full max-w-xs xl:max-w-sm animate-float">
         </div>
 
     </div>
