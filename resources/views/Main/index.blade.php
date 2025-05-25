@@ -11,7 +11,8 @@
         
         <!-- Kanan (mobile): Gambar -->
         <div class="lg:hidden flex justify-center items-center">
-            <img src="{{ asset('man-vr-headset.png') }}" alt="mockup" class="w-2/3 sm:w-1/2">
+         
+            <img  src="{{ asset('1.png') }}" alt="mockup" class="w-2/3 sm:w-1/2 animate-bounce duration-300">
         </div>
 
         <!-- Kiri: Teks -->
@@ -33,7 +34,7 @@
 
         <!-- Kanan (desktop): Gambar -->
         <div class="hidden lg:flex lg:col-span-4 justify-center items-center">
-            <img src="{{ asset('storage/images/man-vr-headset.png') }}" alt="mockup" class="w-full max-w-xs xl:max-w-sm">
+            <img src="{{ asset('1.png') }}" alt="mockup" class="w-full max-w-xs xl:max-w-sm animate-float">
         </div>
 
     </div>
@@ -89,6 +90,50 @@
                 </div>
             @endforeach
         </div>
+
+       
+       @if ($skills->hasPages())
+<div class="mt-10 flex justify-center">
+    <div class="flex">
+        {{-- Tombol Previous --}}
+        @if ($skills->onFirstPage())
+            <span class="flex items-center justify-center px-4 h-10 me-3 text-base font-medium text-gray-400 bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:border-gray-700 dark:text-gray-500 cursor-not-allowed">
+                <svg class="w-3.5 h-3.5 me-2 rtl:rotate-180" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
+                </svg>
+                Previous
+            </span>
+        @else
+            <a href="{{ $skills->previousPageUrl() }}#skill" class="flex items-center justify-center px-4 h-10 me-3 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                <svg class="w-3.5 h-3.5 me-2 rtl:rotate-180" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
+                </svg>
+                Previous
+            </a>
+        @endif
+
+        {{-- Tombol Next --}}
+        @if ($skills->hasMorePages())
+            <a href="{{ $skills->nextPageUrl() }}#skill" class="flex items-center justify-center px-4 h-10 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                Next
+                <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+            </a>
+        @else
+            <span class="flex items-center justify-center px-4 h-10 text-base font-medium text-gray-400 bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:border-gray-700 dark:text-gray-500 cursor-not-allowed">
+                Next
+                <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+            </span>
+        @endif
+    </div>
+</div>
+@endif
+
+
+
     </div>
 </section>
 
