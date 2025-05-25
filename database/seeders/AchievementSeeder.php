@@ -15,9 +15,9 @@ class AchievementSeeder extends Seeder
     {
         DB::table('achievements')->insert([
             [
-                'name' => 'Sololearn JAVA',
-                'description' => 'kava course completed on Sololearn',
-                'image' => 'images/java.png',
+                'name' => 'Sololearn PHP',
+                'description' => 'PHP course completed on Sololearn',
+                'image' => 'achievement/SolearnPHP.png',
             ],
 
         ]);
