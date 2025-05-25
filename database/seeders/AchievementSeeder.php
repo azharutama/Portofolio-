@@ -17,7 +17,7 @@ class AchievementSeeder extends Seeder
             [
                 'name' => 'Sololearn PHP',
                 'description' => 'PHP course completed on Sololearn',
-                'image' => 'achievement/SolearnPHP.png',
+                'image' => 'images/SolearnPHP.png',
             ],
 
         ]);

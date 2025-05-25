@@ -12,7 +12,7 @@
         <!-- Kanan (mobile): Gambar -->
         <div class="lg:hidden flex justify-center items-center">
          
-            <img  src="{{ asset('hero/hero.png') }}" alt="mockup" class="w-2/3 sm:w-1/2 animate-float">
+            <img  src="{{ asset('assets/hero/hero.png') }}" alt="mockup" class="w-2/3 sm:w-1/2 animate-float">
         </div>
 
         <!-- Kiri: Teks -->
@@ -34,7 +34,7 @@
 
         <!-- Kanan (desktop): Gambar -->
         <div class="hidden lg:flex lg:col-span-4 justify-center items-center">
-            <img src="{{ asset('hero/hero.png') }}" alt="mockup" class="w-full max-w-xs xl:max-w-sm animate-float">
+            <img src="{{ asset('assets/hero/hero.png') }}" alt="mockup" class="w-full max-w-xs xl:max-w-sm animate-float">
         </div>
 
     </div>
@@ -42,39 +42,46 @@
 
         
 
-      <section id="about" class=" dark:bg-gray-800 min-h-screen flex items-center" data-aos="fade-up">
-        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 px-4">
-          <!-- Section Left (About) -->
-          <div class="space-y-6 border border-gray-300 dark:border-gray-700 rounded-lg p-6" data-aos="fade-right">
+
+<section id="about" class="dark:bg-gray-800 min-h-screen pt-20 w-7xl">
+    
+    <!-- Cards Section -->
+    <div class="mx-auto flex flex-wrap justify-center gap-12">
+     <div class=" border border-gray-300 dark:border-gray-700 rounded-lg p-6 items-center" data-aos="fade-right">
             <h2 class="text-3xl font-bold dark:text-white text-center">About</h2>
             <p class=" dark:text-gray-400">
-              Nama saya Muhammad Azhar Utama, seorang pengembang backend dengan pengalaman yang luas dalam menggunakan teknologi PHP, framework Laravel, serta manajemen basis data menggunakan MySQL. Dengan latar belakang yang kuat dalam pemrograman dan pengembangan aplikasi web, saya telah berfokus pada menciptakan solusi backend yang efektif dan scalable untuk berbagai jenis proyek.
-    
-            Saya memiliki kemampuan untuk merancang dan mengimplementasikan sistem yang efisien, mulai dari pembuatan API hingga pengelolaan database dengan integritas tinggi. Selain itu, saya memiliki komitmen untuk memastikan setiap proyek yang saya kerjakan berjalan dengan lancar dan memberikan hasil yang optimal. Saya juga selalu berusaha untuk berinovasi, menciptakan solusi yang kreatif dan sesuai dengan kebutuhan bisnis atau pengguna.
-    
-            Sebagai seorang pengembang, saya selalu berupaya untuk menguasai teknologi terbaru dan menerapkannya dalam pekerjaan sehari-hari. Dengan kemampuan komunikasi yang baik, saya dapat bekerja sama dalam tim lintas disiplin dan memastikan bahwa setiap bagian dari proyek mendapat perhatian yang diperlukan untuk mencapai kesuksesan.
+            My name is Muhammad Azhar Utama, a backend developer with extensive experience in PHP, the Laravel framework, and MySQL database management. With a strong background in programming and web application development, I specialize in building efficient and scalable backend solutions for a variety of projects.
+
+            I have the capability to design and implement robust systems, from developing secure and well-structured APIs to maintaining high-integrity database architectures. I am committed to ensuring that every project I undertake runs smoothly and delivers optimal results.
+
+            Driven by innovation, I consistently strive to develop creative solutions tailored to meet both business objectives and user needs. I actively stay updated with the latest technologies and apply them in my daily work to enhance performance and efficiency.
+
+            With strong communication skills and a collaborative mindset, I am able to work effectively within cross-functional teams, ensuring that each component of a project receives the attention it needs to succeed.
+
+
                     </p>
           </div>
-          
-          <!-- Section Right (Education) -->
-          <div class="space-y-6 border border-gray-300 dark:border-gray-700 rounded-lg p-6" data-aos="fade-left">
-            <h2 class="text-3xl font-bold dark:text-white text-center">Education</h2>
-            <ul class="text-gray-600 dark:text-gray-400 list-disc pl-6">
-              <li>
-                <span class="font-semibold  text-white">Pasundan University (Unpas)</span>
-                <p class="text-white">Informatics Engineering, 2022–until now</p>
-              </li>
-              <li>
-                <span class="font-semibold  text-white">SMA Negeri 1 Leuwiliang</span>
-                <p class="text-white">MIPA, 2020-2022</p>
-              </li>
-              
-            </ul>
           </div>
-        </div>
-      </section>
+    </div>
+  
+</section>
 
- {{-- skill section --}}
+
+
+
+
+ <section id="education" class="bg-transparent dark:bg-gray-900">
+    <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+        <img class="w-full dark:hidden" src="{{ asset('assets/hero/education.png') }}" alt="dashboard image">
+        <img class="w-full hidden dark:block" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="dashboard image">
+        <div class="mt-4 md:mt-0">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold  dark:text-white">Education</h2>
+            <p class="mb-6 font-light  md:text-lg dark:text-gray-400">Pasundan University (Unpas)</p>
+             <p class="text-white">Informatics Engineering, 2022–until now</p>
+            
+        </div>
+    </div>
+</section>
 
       <section id="skill" class="dark:bg-gray-900 min-h-screen pt-14">
     <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 shadow-lg ps-24 pr-24">
@@ -204,6 +211,28 @@
     </div>
   
       </section>
+
+<section class="relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:px-8">
+
+  <div class="mx-auto max-w-2xl lg:max-w-4xl">
+    <figure class="mt-10">
+      <blockquote class="text-center text-xl/8 font-semibold  sm:text-2xl/9">
+        <p>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.”</p>
+      </blockquote>
+      <figcaption class="mt-10">
+       
+        <div class="mt-4 flex items-center justify-center space-x-3 text-base">
+          <div class="font-semibold ">Judith Black</div>
+          <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true" class="fill-gray-900">
+            <circle cx="1" cy="1" r="1" />
+          </svg>
+          <div class="">CEO of Workcation</div>
+        </div>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
 
 
 <section id="contact" class="pt-32 dark:bg-gray-900">

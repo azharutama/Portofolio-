@@ -18,12 +18,23 @@ class ProjectSeeder extends Seeder
                 'name' => 'Stryde e-commerce',
                 'description' => 'Website e-commerce yang dibangun menggunakan Laravel dan React. Memiliki fitur keranjang belanja, manajemen produk, dan sistem pembayaran.',
                 'url' => 'https://github.com/rayhanrezki/Stryde',
-                'image' => 'project/Stryde.png',
+                'image' => 'images/Stryde.png',
                 'github' => 'https://github.com/rayhanrezki/Stryde',
                 'technologies' => 'Laravel, React, MySQL,inertiajs',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'name' => 'Portofolio Website',
+                'description' => 'Website Prtofolio yang dibangun menggunakan Laravel dan Bladce. Memiliki fitur CRUD untuk data skill, project, dan achievement.',
+                'url' => 'https://github.com/azharizki/portofolio',
+                'image' => 'images/portofolio.png',
+                'github' => 'https://github.com/azharizki/portofolio',
+                'technologies' => 'Laravel, React, MySQL,inertiajs',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+
 
         ]);
     }
