@@ -15,11 +15,11 @@ class MainController extends Controller
 
 
         $projects = Project::select('id', 'name', 'description', 'url', 'image', 'github', 'technologies')->get();
-        $skills = Skill::select('id', 'name', 'competention', 'description')->get();
+        $skills = Skill::select('id', 'name', 'competention', 'description')->paginate(6);;
         $achievements = Achievement::select('id', 'name', 'description', 'image')->get();
-        $contacts = Contact::select('id', 'name', 'email', 'message')->get(); // Pakai jamak untuk konsistensi
+        $contacts = Contact::select('id',  'email', 'message')->get(); // Pakai jamak untuk konsistensi
 
-        return view('Main.index', compact('projects', 'skills', 'achievements', 'contact'));
+        return view('Main.index', compact('projects', 'skills', 'achievements', 'contacts'));
     }
 
 
