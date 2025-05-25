@@ -11,7 +11,7 @@
         
         <!-- Kanan (mobile): Gambar -->
         <div class="lg:hidden flex justify-center items-center">
-            <img src="{{ asset('storage/images/man-vr-headset.png') }}" alt="mockup" class="w-2/3 sm:w-1/2">
+            <img src="{{ asset('man-vr-headset.png') }}" alt="mockup" class="w-2/3 sm:w-1/2">
         </div>
 
         <!-- Kiri: Teks -->
