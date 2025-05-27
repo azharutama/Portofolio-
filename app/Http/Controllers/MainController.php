@@ -14,9 +14,9 @@ class MainController extends Controller
     {
 
 
-        $projects = Project::select('id', 'name', 'description', 'url', 'image', 'github', 'technologies')->get();
+        $projects = Project::select('id', 'name', 'description', 'url', 'image', 'github', 'technologies')->paginate(3);
         $skills = Skill::select('id', 'name', 'competention', 'description')->paginate(6); // Menggunakan paginate untuk membatasi jumlah skill yang ditampilkan
-        $achievements = Achievement::select('id', 'name', 'description', 'image')->get();
+        $achievements = Achievement::select('id', 'name', 'description', 'image')->paginate(3);
         $contacts = Contact::select('id', 'email', 'message')->get(); // Pakai jamak untuk konsistensi
 
         return view('Main.index', compact('projects', 'skills', 'achievements', 'contacts'));
