@@ -75,8 +75,8 @@
             <!-- Content -->
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl lg:mx-0">
-                <h2 class="text-5xl font-semibold tracking-tight text-white sm:text-7xl">Work with us</h2>
-                <p class="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat.</p>
+                <h2 class="text-5xl font-semibold tracking-tight text-white sm:text-7xl">Want To Know About Me?</h2>
+                <p class="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">my name................</p>
                 </div>
                 <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
                 <div class="grid grid-cols-1 gap-x-8 gap-y-6 text-base/7 font-semibold text-white sm:grid-cols-2 md:flex lg:gap-x-10">
@@ -85,23 +85,20 @@
                     <a href="#">Our values <span aria-hidden="true">&rarr;</span></a>
                     <a href="#">Meet our leadership <span aria-hidden="true">&rarr;</span></a>
                 </div>
-                <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
+                <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-3">
                     <div class="flex flex-col-reverse gap-1">
-                    <dt class="text-base/7 text-gray-300">Offices worldwide</dt>
+                    <dt class="text-base/7 text-gray-300">Skill</dt>
                     <dd class="text-4xl font-semibold tracking-tight text-white">12</dd>
                     </div>
                     <div class="flex flex-col-reverse gap-1">
-                    <dt class="text-base/7 text-gray-300">Full-time colleagues</dt>
+                    <dt class="text-base/7 text-gray-300">Project</dt>
                     <dd class="text-4xl font-semibold tracking-tight text-white">300+</dd>
                     </div>
                     <div class="flex flex-col-reverse gap-1">
-                    <dt class="text-base/7 text-gray-300">Hours per week</dt>
+                    <dt class="text-base/7 text-gray-300">Achievement</dt>
                     <dd class="text-4xl font-semibold tracking-tight text-white">40</dd>
                     </div>
-                    <div class="flex flex-col-reverse gap-1">
-                    <dt class="text-base/7 text-gray-300">Paid time off</dt>
-                    <dd class="text-4xl font-semibold tracking-tight text-white">Unlimited</dd>
-                    </div>
+                   
                 </dl>
                 </div>
             </div>
@@ -145,84 +142,77 @@
 </section>
 
 
+<section id="skill" class="relative isolate dark:bg-gray-900 min-h-screen pt-40 overflow-hidden">
+    <!-- Background Blur -->
+    <div class="absolute inset-0 -z-10 overflow-hidden">
+        <svg class="absolute left-[50%] top-0 -translate-x-1/2 blur-3xl opacity-20 w-[72rem] h-auto" viewBox="0 0 1155 678" fill="none">
+            <path fill="url(#grad-skill)" fill-opacity=".3" d="M317.114 42.235C183.961 -30.593 25.553 78.37 0 191.186v486.74h1155V87.03c-136.37-32.877-276.61-59.137-426.04-38.74-165.5 22.4-316.73 155.936-411.846 33.944Z" />
+            <defs>
+                <linearGradient id="grad-skill" x1="1155" x2="0" y1="0" y2="678" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#6EE7B7" />
+                    <stop offset="1" stop-color="#3B82F6" />
+                </linearGradient>
+            </defs>
+        </svg>
+    </div>
 
-        <section id="skill" class="relative isolate dark:bg-gray-900 min-h-screen pt-40 overflow-hidden">
-            <!-- Background Blur -->
-            <div class="absolute inset-0 -z-10 overflow-hidden">
-                <svg class="absolute left-[50%] top-0 -translate-x-1/2 blur-3xl opacity-20 w-[72rem] h-auto" viewBox="0 0 1155 678" fill="none">
-                    <path fill="url(#grad-skill)" fill-opacity=".3"
-                        d="M317.114 42.235C183.961 -30.593 25.553 78.37 0 191.186v486.74h1155V87.03c-136.37-32.877-276.61-59.137-426.04-38.74-165.5 22.4-316.73 155.936-411.846 33.944Z" />
-                    <defs>
-                        <linearGradient id="grad-skill" x1="1155" x2="0" y1="0" y2="678" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#6EE7B7" />
-                            <stop offset="1" stop-color="#3B82F6" />
-                        </linearGradient>
-                    </defs>
-                </svg>
+    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ps-6 pe-6 md:ps-24 md:pe-24">
+        <div class="max-w-screen-md mb-8 lg:mb-16 text-center mx-auto">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 dark:text-white">Skills</h2>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            @foreach($skills as $skill)
+            <div class="p-6 rounded-xl text-center shadow-lg border border-gray-700 bg-gray-800 hover:shadow-xl transition duration-300 transform hover:-translate-y-1 hover:border-cyan-400" data-aos="flip-left">
+                <h3 class="mb-2 text-xl font-bold text-white">{{ $skill->name }}</h3>
+                <h4 class="mb-2 text-lg font-semibold text-cyan-400">{{ $skill->competention }}</h4>
+                <p class="text-gray-400">{{ $skill->description }}</p>
             </div>
+            @endforeach
+        </div>
 
-            <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ps-6 pe-6 md:ps-24 md:pe-24">
-                <div class="max-w-screen-md mb-8 lg:mb-16 text-center mx-auto">
-                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 dark:text-white">Skills</h2>
-                </div>
+        @if ($skills->hasPages())
+        <div class="mt-10 flex justify-center">
+            <div class="flex space-x-3">
+                @if ($skills->onFirstPage())
+                <span class="px-4 h-10 flex items-center text-sm font-medium text-gray-500 bg-gray-700 rounded-lg cursor-not-allowed">
+                    <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4" />
+                    </svg>
+                    Previous
+                </span>
+                @else
+                <a href="{{ $skills->previousPageUrl() }}#skill" class="px-4 h-10 flex items-center text-sm font-medium text-white bg-gray-800 border border-gray-600 rounded-lg hover:bg-cyan-500 hover:text-black transition">
+                    <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4" />
+                    </svg>
+                    Previous
+                </a>
+                @endif
 
-                <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    @foreach($skills as $skill)
-                    <div class="p-6 rounded-xl text-center shadow-lg border border-gray-700 bg-gray-800 hover:shadow-xl transition duration-300 transform hover:-translate-y-1 hover:border-cyan-400" data-aos="flip-left">
-                        <h3 class="mb-2 text-xl font-bold text-white">{{ $skill->name }}</h3>
-                        <h4 class="mb-2 text-lg font-semibold text-cyan-400">{{ $skill->competention }}</h4>
-                        <p class="text-gray-400">{{ $skill->description }}</p>
-                    </div>
-                    @endforeach
-                </div>
-
-                @if ($skills->hasPages())
-                <div class="mt-10 flex justify-center">
-                    <div class="flex space-x-3">
-                        {{-- Tombol Previous --}}
-                        @if ($skills->onFirstPage())
-                        <span class="px-4 h-10 flex items-center text-sm font-medium text-gray-500 bg-gray-700 rounded-lg cursor-not-allowed">
-                            <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 5H1m0 0 4 4M1 5l4-4" />
-                            </svg>
-                            Previous
-                        </span>
-                        @else
-                        <a href="{{ $skills->previousPageUrl() }}#skill"
-                            class="px-4 h-10 flex items-center text-sm font-medium text-white bg-gray-800 border border-gray-600 rounded-lg hover:bg-cyan-500 hover:text-black transition">
-                            <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 5H1m0 0 4 4M1 5l4-4" />
-                            </svg>
-                            Previous
-                        </a>
-                        @endif
-
-                        {{-- Tombol Next --}}
-                        @if ($skills->hasMorePages())
-                        <a href="{{ $skills->nextPageUrl() }}#skill"
-                            class="px-4 h-10 flex items-center text-sm font-medium text-white bg-gray-800 border border-gray-600 rounded-lg hover:bg-cyan-500 hover:text-black transition">
-                            Next
-                            <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M1 5h12m0 0L9 1m4 4L9 9" />
-                            </svg>
-                        </a>
-                        @else
-                        <span class="px-4 h-10 flex items-center text-sm font-medium text-gray-500 bg-gray-700 rounded-lg cursor-not-allowed">
-                            Next
-                            <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M1 5h12m0 0L9 1m4 4L9 9" />
-                            </svg>
-                        </span>
-                        @endif
-                    </div>
-                </div>
+                @if ($skills->hasMorePages())
+                <a href="{{ $skills->nextPageUrl() }}#skill" class="px-4 h-10 flex items-center text-sm font-medium text-white bg-gray-800 border border-gray-600 rounded-lg hover:bg-cyan-500 hover:text-black transition">
+                    Next
+                    <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </a>
+                @else
+                <span class="px-4 h-10 flex items-center text-sm font-medium text-gray-500 bg-gray-700 rounded-lg cursor-not-allowed">
+                    Next
+                    <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </span>
                 @endif
             </div>
-        </section>
+        </div>
+        @endif
+    </div>
+</section>
+
+<!-- Section Project dan Achievement menyusul karena terlalu panjang untuk satu kali post -->
+
 
         <section id="project" class="dark:bg-gray-900 min-h-screen mt-20 pt-40">
         <!-- Title Section -->
@@ -297,7 +287,7 @@
                             Previous
                         </span>
                         @else
-                        <a href="{{ $projects->previousPageUrl() }}#skill"
+                        <a href="{{ $projects->previousPageUrl() }}#project"
                             class="px-4 h-10 flex items-center text-sm font-medium text-white bg-gray-800 border border-gray-600 rounded-lg hover:bg-cyan-500 hover:text-black transition">
                             <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 14 10">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -309,7 +299,7 @@
 
                         {{-- Tombol Next --}}
                         @if ($projects->hasMorePages())
-                        <a href="{{ $skills->nextPageUrl() }}#skill"
+                        <a href="{{ $skills->nextPageUrl() }}#project"
                             class="px-4 h-10 flex items-center text-sm font-medium text-white bg-gray-800 border border-gray-600 rounded-lg hover:bg-cyan-500 hover:text-black transition">
                             Next
                             <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 14 10">
@@ -494,12 +484,14 @@
             </form>
         </div>
         </section>
+
+
 <footer class="relative bg-gradient-to-r from-slate-900 via-blue-900 to-slate-800 text-blue-300 rounded-t-lg shadow-lg p-12 pb-16 mt-32 mb-0 antialiased min-h-[200px]">
   <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
     <p class="text-sm text-center md:text-left opacity-90">
       &copy; 2019-2025 
       <a href="https://flowbite.com/" target="_blank" rel="noopener noreferrer" class="underline hover:text-yellow-400 transition">
-        Flowbite.com
+        azharutamA
       </a>. All rights reserved.
     </p>
 
