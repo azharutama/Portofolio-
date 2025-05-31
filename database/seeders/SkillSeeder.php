@@ -27,6 +27,7 @@ class SkillSeeder extends Seeder
             ['name' => 'Google Cloud', 'competention' => 'Advance', 'description' => 'Advanced usage of Google Cloud Platform'],
             ['name' => 'Java', 'competention' => 'Intermediate', 'description' => 'Intermediate Java programming skills'],
             ['name' => 'Kotlin', 'competention' => 'Beginner', 'description' => 'Basic understanding of Kotlin'],
+            ['name' => 'Docker', 'competention' => 'Intermediate', 'description' => 'Intermediate knowledge of Docker and containerization'],
         ]);
     }
 }
