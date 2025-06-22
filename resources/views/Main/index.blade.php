@@ -76,27 +76,22 @@
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl lg:mx-0">
                 <h2 class="text-5xl font-semibold tracking-tight text-white sm:text-7xl">Want To Know About Me?</h2>
-                <p class="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">my name................</p>
+                <p class="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/12">Hello, my name is Muhammad Azhar Utama, a passionate Backend Developer with experience in Laravel, RESTful APIs, and MySQL. I love building efficient and scalable systems to help solve real-world problems through technology.</p>
                 </div>
                 <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-                <div class="grid grid-cols-1 gap-x-8 gap-y-6 text-base/7 font-semibold text-white sm:grid-cols-2 md:flex lg:gap-x-10">
-                    <a href="#">Open roles <span aria-hidden="true">&rarr;</span></a>
-                    <a href="#">Internship program <span aria-hidden="true">&rarr;</span></a>
-                    <a href="#">Our values <span aria-hidden="true">&rarr;</span></a>
-                    <a href="#">Meet our leadership <span aria-hidden="true">&rarr;</span></a>
-                </div>
+              
                 <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-3">
                     <div class="flex flex-col-reverse gap-1">
                     <dt class="text-base/7 text-gray-300">Skill</dt>
-                    <dd class="text-4xl font-semibold tracking-tight text-white">12</dd>
+                    <dd class="text-4xl font-semibold tracking-tight text-white">{{ $countSkills }}</dd>
                     </div>
                     <div class="flex flex-col-reverse gap-1">
                     <dt class="text-base/7 text-gray-300">Project</dt>
-                    <dd class="text-4xl font-semibold tracking-tight text-white">300+</dd>
+                    <dd class="text-4xl font-semibold tracking-tight text-white">{{ $countProjects }}</dd>
                     </div>
                     <div class="flex flex-col-reverse gap-1">
                     <dt class="text-base/7 text-gray-300">Achievement</dt>
-                    <dd class="text-4xl font-semibold tracking-tight text-white">40</dd>
+                    <dd class="text-4xl font-semibold tracking-tight text-white">{{ $countAchievements }}</dd>
                     </div>
                    
                 </dl>
