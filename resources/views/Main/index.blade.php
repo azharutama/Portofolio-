@@ -27,7 +27,7 @@
     <div class="flex flex-col items-center text-center px-6 sm:px-8 max-w-3xl">
         <!-- Gambar Bulat di Atas -->
         <div class="mb-10">
-            <img src="{{ asset('assets/hero/hero.png') }}" alt="mockup" class="w-40 sm:w-52 md:w-60 lg:w-72 rounded-full border-4 border-white shadow-xl animate-float">
+            <img src="{{ asset('assets/hero/Me.png') }}" alt="mockup" class="w-40 sm:w-52 md:w-60 lg:w-72 rounded-full border-4 border-white shadow-xl animate-float">
         </div>
 
         <!-- Judul -->

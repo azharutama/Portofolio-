@@ -2,50 +2,59 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Default navbar */
 #navbar {
-    background-color: transparent; /* Default background */
-    color: white; /* Default text color */
-    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: transparent;
+    color: white;
+    transition: all 0.3s ease;
 }
 
+/* Saat di-scroll: background gelap blur (mobile & desktop sama) */
 #navbar.scrolled {
-    background: #00111c;
-    backdrop-filter: blur(10px); /* Blur effect */
+    background-color: rgba(0, 17, 28, 0.5); /* transparan gelap */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#navbar.scrolled a {
-    color: white;
-    transition: color 0.3s ease, background-color 0.3s ease;
-}
-#navbar.scrolled a:hover {
-    color: #1d4ed8; /* Warna biru saat hover */
-    background-color: white; /* Latar belakang putih saat hover */
-    border-radius: 5px; /* Membuat sudut membulat */
-}
-
+/* Link navbar default */
 .nav-link {
-    color: inherit; /* Warna default dari navbar */
+    color: inherit;
+    transition: color 0.3s ease;
 }
 
+/* Hover link */
 .nav-link:hover {
-    color: #1d4ed8; /* Warna biru saat hover */
+    color: #1d4ed8;
 }
 
-.nav-link.scrolled:hover {
+/* Hover saat scrolled */
+#navbar.scrolled .nav-link:hover {
     color: #1d4ed8;
     background-color: white;
     border-radius: 5px;
     padding: 5px 10px;
-    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Mobile Menu Styles */
+/* Mobile menu */
+#mobile-menu {
+    background-color: rgba(0, 17, 28, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
 #mobile-menu a {
-    color: gray;
+    color: white;
+    transition: background-color 0.3s ease;
 }
 
+#mobile-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+/* Efek kursor ketik */
 .cursor {
     display: inline-block;
     font-weight: bold;
@@ -53,17 +62,16 @@ html {
 }
 
 @keyframes blink {
-    0% {
+    0%,
+    100% {
         opacity: 1;
     }
     50% {
         opacity: 0;
     }
-    100% {
-        opacity: 1;
-    }
 }
 
+/* Efek flip (opsional) */
 @keyframes flipAnimation {
     0% {
         transform: rotateY(90deg);
@@ -77,25 +85,4 @@ html {
 
 .flip-on-load {
     animation: flipAnimation 1s ease-out forwards;
-}
-
-/* Media query untuk layar kecil (mobile) */
-@media (max-width: 768px) {
-    #navbar.scrolled {
-        background-color: rgba(
-            0,
-            0,
-            0,
-            0.5
-        ); /* Background transparan gelap saat di-scroll */
-        color: white;
-    }
-
-    #navbar.scrolled a {
-        color: ;
-    }
-
-    #mobile-menu a {
-        color: white; /* Warna teks putih untuk konsistensi */
-    }
 }
