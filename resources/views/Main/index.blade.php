@@ -6,55 +6,50 @@
 
 
 <main class="container mx-auto grid grid-cols-1 "> 
-        <section id="home" class="relative isolate dark:bg-gray-900 mt-10 min-h-screen flex items-center overflow-hidden" data-aos="fade-up">
-        <!-- Background Blur -->
-        <div class="absolute inset-0 -z-10 overflow-hidden">
-            <svg class="absolute left-[50%] top-0 -translate-x-1/2 blur-3xl opacity-20 w-[72rem] h-auto" viewBox="0 0 1155 678" fill="none">
+   
+
+    <section id="home" class="relative isolate dark:bg-gray-900 mt-10 min-h-screen flex items-center justify-center overflow-hidden" data-aos="fade-up">
+    <!-- Background Blur -->
+    <div class="absolute inset-0 -z-10 overflow-hidden">
+        <svg class="absolute left-[50%] top-0 -translate-x-1/2 blur-3xl opacity-20 w-[72rem] h-auto" viewBox="0 0 1155 678" fill="none">
             <path fill="url(#gradient)" fill-opacity=".3"
                 d="M317.114 42.235C183.961 -30.593 25.553 78.37 0 191.186v486.74h1155V87.03c-136.37-32.877-276.61-59.137-426.04-38.74-165.5 22.4-316.73 155.936-411.846 33.944Z" />
             <defs>
                 <linearGradient id="gradient" x1="1155" x2="0" y1="0" y2="678" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#ff80b5" />
-                <stop offset="1" stop-color="#9089fc" />
+                    <stop stop-color="#ff80b5" />
+                    <stop offset="1" stop-color="#9089fc" />
                 </linearGradient>
             </defs>
-            </svg>
+        </svg>
+    </div>
+
+    <!-- Konten Tengah -->
+    <div class="flex flex-col items-center text-center px-6 sm:px-8 max-w-3xl">
+        <!-- Gambar Bulat di Atas -->
+        <div class="mb-10">
+            <img src="{{ asset('assets/hero/Me.png') }}" alt="mockup" class="w-40 sm:w-52 md:w-60 lg:w-72 rounded-full border-4 border-white shadow-xl animate-float">
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 py-8 px-4 sm:px-6 lg:px-8 mx-auto gap-8">
-            
-            <!-- Kanan (mobile): Gambar -->
-            <div class="lg:hidden flex justify-center items-center">
-            <img src="{{ asset('assets/hero/hero.png') }}" alt="mockup" class="w-2/3 sm:w-1/2 animate-float">
-            </div>
+        <!-- Judul -->
+        <h1 id="typing-title" class="text-4xl sm:text-3xl md:text-4xl xl:text-5xl font-extrabold tracking-tight leading-tight dark:text-white">
+            <span id="text"></span><span class="cursor">|</span>
+        </h1>
 
-           <!-- Kiri: Teks -->
-<div class="lg:col-span-8 flex flex-col justify-center items-center text-center lg:items-start lg:text-left">
-    <h1 id="typing-title" class="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold tracking-tight leading-tight dark:text-white">
-        <span id="text"></span><span class="cursor">|</span>
-    </h1>
-    <p class="text-base sm:text-lg font-light dark:text-gray-400 mt-6">
-        I'm <span class="font-semibold">Muhammad Azhar Utama</span>, a 
-        <span class="font-semibold">Backend Developer</span> with extensive experience in PHP, the Laravel framework, and MySQL database management.
-    </p>
-    <p class="text-base sm:text-lg font-light dark:text-gray-400 mt-4">
-        With a strong background in programming and web application development, I specialize in crafting efficient and scalable backend solutions for diverse projects.
-    </p>
-    <a href="#contact" class="mt-8 inline-block px-6 py-3 text-white bg-transparent border border-white rounded-lg shadow-lg hover:bg-gray-200 hover:text-black transition-all w-max">
-        Contact Me
-    </a>
-</div>
+        <!-- Deskripsi -->
+        <p class="text-base sm:text-lg font-light dark:text-gray-400 mt-6">
+            I'm <span class="font-semibold">Muhammad Azhar Utama</span>, a 
+            <span class="font-semibold">Backend Developer</span> with extensive experience in PHP, the Laravel framework, and MySQL database management.
+        </p>
+
+        <!-- Tombol -->
+        <a href="#contact" class="mt-8 inline-block px-6 py-3 text-white bg-transparent border border-white rounded-lg shadow-lg hover:bg-gray-200 hover:text-black transition-all">
+            Contact Me
+        </a>
+    </div>
+</section>
 
 
-            <!-- Kanan (desktop): Gambar -->
-            <div class="hidden lg:flex lg:col-span-4 justify-center items-center">
-            <img src="{{ asset('assets/hero/hero.png') }}" alt="mockup" class="w-full max-w-xs xl:max-w-sm animate-float">
-            </div>
-            
-        </div>
-        </section>
-
-        <section id="about" class="dark:bg-gray-800 min-h-screen pt-20">
+<section id="about" class="dark:bg-gray-800 min-h-screen pt-20">
 
         <!-- Tambahan wrapper agar efek rounded rapi -->
         <div class="mx-auto w-[90%] rounded-3xl overflow-hidden shadow-lg">
@@ -76,27 +71,22 @@
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl lg:mx-0">
                 <h2 class="text-5xl font-semibold tracking-tight text-white sm:text-7xl">Want To Know About Me?</h2>
-                <p class="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">my name................</p>
+                <p class="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/12">Hello, my name is Muhammad Azhar Utama, a passionate Backend Developer with experience in Laravel, RESTful APIs, and MySQL. I love building efficient and scalable systems to help solve real-world problems through technology.</p>
                 </div>
                 <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-                <div class="grid grid-cols-1 gap-x-8 gap-y-6 text-base/7 font-semibold text-white sm:grid-cols-2 md:flex lg:gap-x-10">
-                    <a href="#">Open roles <span aria-hidden="true">&rarr;</span></a>
-                    <a href="#">Internship program <span aria-hidden="true">&rarr;</span></a>
-                    <a href="#">Our values <span aria-hidden="true">&rarr;</span></a>
-                    <a href="#">Meet our leadership <span aria-hidden="true">&rarr;</span></a>
-                </div>
+              
                 <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-3">
                     <div class="flex flex-col-reverse gap-1">
                     <dt class="text-base/7 text-gray-300">Skill</dt>
-                    <dd class="text-4xl font-semibold tracking-tight text-white">12</dd>
+                    <dd class="text-4xl font-semibold tracking-tight text-white">{{ $countSkills }}</dd>
                     </div>
                     <div class="flex flex-col-reverse gap-1">
                     <dt class="text-base/7 text-gray-300">Project</dt>
-                    <dd class="text-4xl font-semibold tracking-tight text-white">300+</dd>
+                    <dd class="text-4xl font-semibold tracking-tight text-white">{{ $countProjects }}</dd>
                     </div>
                     <div class="flex flex-col-reverse gap-1">
                     <dt class="text-base/7 text-gray-300">Achievement</dt>
-                    <dd class="text-4xl font-semibold tracking-tight text-white">40</dd>
+                    <dd class="text-4xl font-semibold tracking-tight text-white">{{ $countAchievements }}</dd>
                     </div>
                    
                 </dl>
@@ -105,7 +95,7 @@
 
             </div>
         </div>
-        </section>
+</section>
 
 
 <section id="education" class="bg-transparent dark:bg-gray-900 min-h-screen pt-32">

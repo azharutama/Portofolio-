@@ -3,7 +3,7 @@ import "flowbite";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// Initialize AOS
+// Init AOS
 AOS.init();
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -19,51 +19,45 @@ document.addEventListener("DOMContentLoaded", function () {
     let index = 0;
     let isTyping = false;
 
-    // 👉 Optimized Scroll Effect
-    window.addEventListener("scroll", function () {
+    // Scroll: tambah class untuk efek blur dan bg gelap
+    window.addEventListener("scroll", () => {
         if (!navbar) return;
-
-        let scrollHeight = window.scrollY;
-        let triggerHeight = 10; // Sesuaikan sesuai kebutuhan
-
-        if (scrollHeight > triggerHeight) {
+        if (window.scrollY > 10) {
             navbar.classList.add("scrolled");
-            navLinks.forEach((link) => link.classList.add("scrolled"));
         } else {
             navbar.classList.remove("scrolled");
-            navLinks.forEach((link) => link.classList.remove("scrolled"));
         }
     });
 
-    // 👉 Toggle Mobile Menu
+    // Toggle mobile menu
     if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener("click", function () {
+        menuBtn.addEventListener("click", () => {
             mobileMenu.classList.toggle("hidden");
         });
     }
 
-    // 👉 Efek Mengetik (Typing Effect)
+    // Typing effect
     function typeEffect() {
         if (index < text.length) {
             textElement.textContent += text.charAt(index);
             index++;
-            setTimeout(typeEffect, 100); // Kecepatan efek ketik (100ms per karakter)
+            setTimeout(typeEffect, 100);
         } else {
-            cursorElement.style.animation = "blink 0.8s infinite"; // Kursor berkedip setelah selesai mengetik
+            cursorElement.style.animation = "blink 0.8s infinite";
         }
     }
 
     function resetTypingEffect() {
         if (!isTyping) {
             isTyping = true;
-            textElement.textContent = ""; // Kosongkan teks sebelum mulai ulang
-            cursorElement.style.animation = "none"; // Hentikan animasi berkedip saat mengetik ulang
+            textElement.textContent = "";
+            cursorElement.style.animation = "none";
             index = 0;
             typeEffect();
         }
     }
 
-    // 👉 Observer untuk restart efek ketik saat #home masuk viewport
+    // Restart typing saat elemen #home masuk viewport
     if (heroSection) {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -77,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             { threshold: 0.5 }
         );
-
         observer.observe(heroSection);
     }
 });

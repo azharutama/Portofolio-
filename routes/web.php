@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Skill;
+use App\Models\Project;
+use App\Models\achievement;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\LoginController;
@@ -44,4 +47,26 @@ Route::middleware('auth')->group(function () {
   // Contact
   Route::get('/dashboard/contact', [DashboardController::class, 'showContact'])->name('dashboard.contacts');
   Route::get('/dashboard/contact/{id}', [DashboardController::class, 'deleteContact'])->name('contacts.destroy');
+
+  // API routes for frontend JS fetch
+  Route::get('/api/projects', function () {
+    return response()->json(
+      Project::select('id', 'name', 'description', 'url', 'image', 'github', 'technologies')
+        ->paginate(3)
+    );
+  });
+
+  Route::get('/api/skills', function () {
+    return response()->json(
+      Skill::select('id', 'name', 'competention', 'description')
+        ->paginate(6)
+    );
+  });
+
+  Route::get('/api/achievements', function () {
+    return response()->json(
+      achievement::select('id', 'name', 'description', 'image')
+        ->paginate(3)
+    );
+  });
 });

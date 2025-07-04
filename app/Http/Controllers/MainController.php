@@ -10,19 +10,24 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $projects = Project::select('id', 'name', 'description', 'url', 'image', 'github', 'technologies')
+            ->paginate(3, ['*'], 'project_page');
 
+        $skills = Skill::select('id', 'name', 'competention', 'description')
+            ->paginate(6, ['*'], 'skill_page');
 
-        $projects = Project::select('id', 'name', 'description', 'url', 'image', 'github', 'technologies')->paginate(3);
-        $skills = Skill::select('id', 'name', 'competention', 'description')->paginate(6); // Menggunakan paginate untuk membatasi jumlah skill yang ditampilkan
-        $achievements = Achievement::select('id', 'name', 'description', 'image')->paginate(3);
-        $contacts = Contact::select('id', 'email', 'message')->get(); // Pakai jamak untuk konsistensi
+        $achievements = Achievement::select('id', 'name', 'description', 'image')
+            ->paginate(3, ['*'], 'achievement_page');
 
-        return view('Main.index', compact('projects', 'skills', 'achievements', 'contacts'));
+        $contacts = Contact::select('id', 'email', 'message')->get();
+        $countProjects = Project::count();
+        $countSkills = Skill::count();
+        $countAchievements = Achievement::count();
+
+        return view('Main.index', compact('projects', 'skills', 'achievements', 'contacts', 'countProjects', 'countSkills', 'countAchievements'));
     }
-
-
 
     public function storeContact(Request $request)
     {
@@ -31,6 +36,8 @@ class MainController extends Controller
             'subject' => 'required|string',
             'message' => 'required|string',
         ]);
+
+
 
         try {
             Contact::create([
