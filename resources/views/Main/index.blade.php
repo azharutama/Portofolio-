@@ -242,7 +242,7 @@
                                 hover:scale-105 hover:from-cyan-600 hover:to-blue-800
                                 transition-transform duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400"
                         >
-                            VIEW
+                            DEMO
                             <svg class="w-4 h-4 ms-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                             </svg>
